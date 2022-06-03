@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -20,6 +20,7 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { OpinionesComponent } from './components/opiniones/opiniones.component';
 import { DaradopcionComponent } from './components/daradopcion/daradopcion.component';
 import { SolicitudesDarAdopcionComponent } from './components/solicitudes-dar-adopcion/solicitudes-dar-adopcion.component';
+
 @NgModule({
   declarations: [
     AppComponent,

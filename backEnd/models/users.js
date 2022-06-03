@@ -8,6 +8,7 @@ const usuario = Schema({
     password:{
         type:String,
         require:[true,'La contraseña es obligatoria']
-    }
+    },
+    login:Boolean
 })
 module.exports = model('usuario',usuario);

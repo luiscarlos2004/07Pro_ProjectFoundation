@@ -3,5 +3,5 @@
 <form #formularioLogin="ngForm" (ngSubmit)="enviardatos(formularioLogin)">
     <input type="text" name="correo" placeholder="Digite su correo" [(ngModel)]="servicioComponent.users.correo">
     <input type="text" name="password" placeholder="Digite su contraseña" [(ngModel)]="servicioComponent.users.password">
-    <button type="submit">Ingresar</button>
+    <button id="button" type="submit">Ingresar</button>
 </form>

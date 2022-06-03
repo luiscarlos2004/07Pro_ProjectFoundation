@@ -1,13 +1,20 @@
-const getUsers = (req,res)=>{
-    res.send('cargamos algo');
+const users = require('../models/users');
+const postUsers = async(req,res)=>{
+    let {correo,password} = req.body;
+    let resp = await users.findOne({$and:[{correo},{password}]});
+    if(resp){
+        res.send(resp._id);
+    }else{
+        res.send(false);
+    }
+    
 }
-const postUsers = (req,res)=>{
-    console.log(req.body)
-    res.send(true)
-}
+// const getActivo = async(req,res)=>{
+//     // let {login} = await users.findOne
+// }
 
 
 module.exports = {
-    getUsers,
-    postUsers
+    postUsers,
+    // getActivo
 }

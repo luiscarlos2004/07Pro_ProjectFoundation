@@ -9,14 +9,15 @@ export class ServiceService {
   constructor(private http:HttpClient) { }
   users:Users = {
     correo : '',
-    password : ''
-  }
-  getUsers(){
-    let peticion = this.http.get<Users>(this.URL + '/api/users');
-    return peticion;
+    password : '',
+    
   }
   postUsers(datos:Users){
     let peticion = this.http.post(this.URL + '/api/users', datos);
     return peticion;
+  }
+  consultarActivo(){
+    let peticion = this.http.get(this.URL + '/api/users');
+    return peticion
   }
 }
