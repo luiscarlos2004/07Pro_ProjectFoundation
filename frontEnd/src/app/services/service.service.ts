@@ -19,4 +19,9 @@ export class ServiceService {
     let peticion = this.http.post(this.URL + '/api/users', datos);
     return peticion;
   }
+
+  getAdoptame(){
+    let peticion = this.http.get(this.URL + '/get_Mascotas')
+    return peticion
+  }
 }
