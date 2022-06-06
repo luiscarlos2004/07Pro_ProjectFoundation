@@ -8,10 +8,6 @@ const validarCampos = (req,res,next)=>{
         });
     }
     next();
-    // if(!error.isEmpty()){
-    //     return res.status(400).json(error);
-    // }
-    
 }
 module.exports = {
     validarCampos

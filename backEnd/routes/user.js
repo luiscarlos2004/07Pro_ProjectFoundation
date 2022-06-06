@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
 const { check } = require('express-validator');
-const {postUsers} = require('../controllers/users');
+const {postUsers,consultarEstado} = require('../controllers/users');
 const {validarCampos} = require('../middlewares/validar-campos');
 const {correoExiste,passwordExiste} = require('../helpers/db-validatots');
 router.post('/',[
@@ -9,8 +9,7 @@ router.post('/',[
     check('password').custom(passwordExiste),
     validarCampos
 ],postUsers);
-// router.get('/',getActivo);
-
+router.get('/:id',consultarEstado);
 
 
 module.exports = router;

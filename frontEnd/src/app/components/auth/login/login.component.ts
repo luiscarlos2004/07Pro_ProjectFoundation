@@ -1,21 +1,16 @@
 import { FormsModule } from '@angular/forms';
-import { Component, OnInit, Input,Output } from '@angular/core';
-import { ServiceService } from '../../services/service.service';
+import { Component, OnInit} from '@angular/core';
+import { ServiceService } from 'src/app/services/service.service';
 import { NgForm } from '@angular/forms';
 import { Users } from 'src/app/models/users';
-import { BrowserModule } from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { EventEmitter } from 'stream';
-// declare var JQuery:any;
-// declare var $:any;
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
 export class LoginComponent implements OnInit {
   constructor(public servicioComponent:ServiceService, private router:Router) { }
   nuevo:Users={
@@ -24,25 +19,27 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  
+  forma={
+    'clase1':false
+  }
   enviardatos(datos:NgForm){
     
     this.servicioComponent.postUsers(datos.value).subscribe({
       next:(res)=>{
-        console.log(res);
-        @Output() valueResponse: EventEmitter<string> = new EventEmitter();
+        this.consultarEstados(res)
+        
         Swal.fire({
           position: 'center',
           icon: 'success',
-          titleText: 'Iniciado seccion correctamente',
+          titleText: 'Iniciado sesion correctamente',
           showConfirmButton: false,
           width:450,
           timer: 1500
-        })
-        this.router.navigate(['inicio'])
+        });
+        datos.reset();
+        this.router.navigate(['pagina/']);
       },
       error:(err)=>{
-        // alert('Correo o contraseña no son validas')
         Swal.fire({
           icon: 'error',
           title: 'Error al iniciar seción',
@@ -55,7 +52,16 @@ export class LoginComponent implements OnInit {
         datos.reset();
       }
     })
-   
   }
-
+  consultarEstados(id:any){
+    this.servicioComponent.consultarEstado(id._id).subscribe({
+      next:(res)=>{
+        if(res){
+          console.log('estas activo')
+          this.forma['clase1']=true;
+        }
+      },
+      error:(err)=>{console.log(err)}
+    })
+  }
 }

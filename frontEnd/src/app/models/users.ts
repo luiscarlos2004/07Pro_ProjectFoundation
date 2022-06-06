@@ -1,5 +1,6 @@
 export type Users = {
     correo:string,
-    password:string
-
+    password:string,
+    estado?:boolean,
+    _id?:''
 }

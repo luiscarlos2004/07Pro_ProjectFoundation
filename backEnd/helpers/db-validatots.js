@@ -1,4 +1,3 @@
-const res = require('express/lib/response');
 const users = require('../models/users');
 
 const correoExiste = async(correo = '') =>{
@@ -14,7 +13,14 @@ const passwordExiste = async(password = '') =>{
         throw new Error(`La contraseña no existe en la base de datos`,);
     }
 }
+// const estadoActivo = async(estado = false)=>{
+//     const estadoActivo = await users.findOne(estado);
+//     if(estadoActivo == false){
+//         throw new Error(`El usuario no esta activo`);
+//     }
+// }
 module.exports = {
     correoExiste,
     passwordExiste
+    // estadoActivo
 }

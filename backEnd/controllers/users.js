@@ -2,19 +2,22 @@ const users = require('../models/users');
 const postUsers = async(req,res)=>{
     let {correo,password} = req.body;
     let resp = await users.findOne({$and:[{correo},{password}]});
+    await users.updateOne({_id:resp.id},{estado:true})
     if(resp){
-        res.send(resp._id);
+        res.send(resp);
     }else{
         res.send(false);
     }
-    
 }
-// const getActivo = async(req,res)=>{
-//     // let {login} = await users.findOne
-// }
-
-
+const consultarEstado = async(req,res)=>{
+    const {estado} = await users.findById(req.params.id);
+    if(estado){
+        res.send(true)
+    }else{
+        res.send(false)
+    }
+}
 module.exports = {
     postUsers,
-    // getActivo
+    consultarEstado
 }

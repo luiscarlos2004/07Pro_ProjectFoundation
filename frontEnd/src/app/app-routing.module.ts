@@ -1,20 +1,38 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './components/inicio/inicio.component';
-import { LoginComponent } from './components/login/login.component';
+import { ErrorPageComponent } from './components/shared/error-page/error-page.component';
+
+import { AuthGuard } from './components/auth/auth/guards/auth.guard';
 const routes: Routes = [
   {
-    path:'inicio',
-    component:InicioComponent
+    path:'auth',
+    loadChildren: () => import('./components/auth/login-module.module').then(m => m.LoginModuleModule),
   },
   {
-    path:'login',
-    component:LoginComponent
+    path:'pagina',
+    loadChildren: () => import('./components/PaginaPrincipal/module-principal.module').then(m=>m.ModulePrincipalModule),
+    canLoad: [ AuthGuard ]
+  },
+  {
+    path:'admin',
+    loadChildren: () => import('./components/admin/admin-module.module').then(m => m.AdminModuleModule)
+  },
+  {
+    path:'404',
+    component: ErrorPageComponent
+  },
+  {
+    path:'**',
+    redirectTo: 'auth/login'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }
