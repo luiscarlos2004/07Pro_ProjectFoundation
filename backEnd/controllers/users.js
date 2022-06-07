@@ -1,4 +1,5 @@
 const users = require('../models/users');
+const registroUser = require('../models/registrosUser');
 const postUsers = async(req,res)=>{
     let {correo,password} = req.body;
     let resp = await users.findOne({$and:[{correo},{password}]});
@@ -17,7 +18,24 @@ const consultarEstado = async(req,res)=>{
         res.send(false)
     }
 }
+const resgistrarUsuarios = async(req,res)=>{
+    const {correo,password,estado,rol, ...resto} = req.body;
+    let obj = {
+        correo,
+        password,
+        estado,
+        rol
+    }
+    await new registroUser(resto).save();
+    await new users(obj).save();
+}
+const cargarUsuarios = async(req,res)=>{
+    let doc = await users.find();
+    res.send(doc);
+}
 module.exports = {
     postUsers,
-    consultarEstado
+    consultarEstado,
+    resgistrarUsuarios,
+    cargarUsuarios
 }

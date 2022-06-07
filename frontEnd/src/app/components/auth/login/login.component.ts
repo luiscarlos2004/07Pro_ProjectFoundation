@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     
     this.servicioComponent.postUsers(datos.value).subscribe({
       next:(res)=>{
+        
         this.consultarEstados(res)
         
         Swal.fire({
@@ -37,7 +38,19 @@ export class LoginComponent implements OnInit {
           timer: 1500
         });
         datos.reset();
-        this.router.navigate(['pagina/']);
+
+        const obj:any = res;
+        const keys:any = Object.entries(obj)
+        let v = keys[4]
+        for(let i = 0; i < v.length; i++){
+          let rol = v[i]
+          if(rol=='ADMIN'){
+            this.router.navigate(['admin/']);
+          }else{
+            this.router.navigate(['pagina/']);
+          }
+        }
+        // this.router.navigate(['pagina/']);
       },
       error:(err)=>{
         Swal.fire({

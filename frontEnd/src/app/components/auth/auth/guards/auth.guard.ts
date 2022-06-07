@@ -22,7 +22,7 @@ export class AuthGuard implements CanLoad {
     console.log(route);
     console.log(segments);
     if(this.ServiceService.auth.correo){
-      return true
+      return true;
     }
     return false;
   }

@@ -1,1 +1,5 @@
 <!-- dashbord para manejar el admin los usuarios registrados -->
+<button (click)="cargarUsuarios()">info</button>
+<li *ngFor="let i of ServicioService.user">
+    <p>{{i.correo}}</p>
+</li>

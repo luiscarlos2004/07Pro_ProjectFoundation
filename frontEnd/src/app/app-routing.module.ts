@@ -15,7 +15,8 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    loadChildren: () => import('./components/admin/admin-module.module').then(m => m.AdminModuleModule)
+    loadChildren: () => import('./components/admin/admin-module.module').then(m => m.AdminModuleModule),
+    canLoad: [ AuthGuard ]
   },
   {
     path:'404',
