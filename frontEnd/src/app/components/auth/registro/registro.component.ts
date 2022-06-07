@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServiceService } from '../../../services/service.service';
 import { Register } from 'src/app/models/registerusers';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro',
@@ -10,15 +11,16 @@ import Swal from 'sweetalert2';
   ]
 })
 export class RegistroComponent implements OnInit {
-  nuevo:String = ''
-  constructor(public ServiceService:ServiceService) { }
+  // nuevo:String = ''
+  constructor(public servicio:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
   }
   registrarUsers(datos:NgForm){
     // console.log(datos)
-    this.ServiceService.registrarUsers(datos.value).subscribe({
+    this.servicio.registrarUsers(datos.value).subscribe({
       next:(res)=>{
+        console.log(res);
         Swal.fire({
           position: 'center',
           icon: 'success',
@@ -28,12 +30,14 @@ export class RegistroComponent implements OnInit {
           timer: 1500
         });
         datos.reset();
+        this.router.navigate(['auth/login']);
       },
       error:(err)=>{
+        console.log(err)
         Swal.fire({
           icon: 'error',
           title: 'Error al guardar los datos',
-          text: 'Este correo ya esta en uso',
+          text: 'Correo o contraseñ invalida',
           width:500,
           confirmButtonColor: '#3085d5', 
         })

@@ -1,28 +1,27 @@
 <p>registro</p>
 <li><a routerLink="login">Login</a></li>
-
 <form #formularioRegistro="ngForm" (ngSubmit)="registrarUsers(formularioRegistro)">
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="ServiceService.usersRegis.nombre">
-    <input type="number" min="0" name="cedula" placeholder="Cedula" [(ngModel)]="ServiceService.usersRegis.cedula">
-    <input type="number" min="0" name="celular" placeholder="Celular" [(ngModel)]="ServiceService.usersRegis.celular">
-    <input type="text" name="direccion" placeholder="Direccion" [(ngModel)]="ServiceService.usersRegis.direccion">
-    <input type="email" name="correo" placeholder="Correo" [(ngModel)]="ServiceService.usersRegis.correo">
-    <input type="text" name="ocupacion" placeholder="Ocupacion" [(ngModel)]="ServiceService.usersRegis.ocupacion">
-    <input type="number" min="0" name="ingresos" placeholder="Ingresos" [(ngModel)]="ServiceService.usersRegis.ingresos">
-    <input type="number" min="0" name="edad" placeholder="Edad" [(ngModel)]="ServiceService.usersRegis.edad">
-    <input type="text" name="usuario" placeholder="Usuario" [(ngModel)]="ServiceService.usersRegis.usuario">
-    <input type="text" name="password" placeholder="Contraseña" [(ngModel)]="ServiceService.usersRegis.password">
-    <select name="preferencias" [(ngModel)]="ServiceService.usersRegis.preferencias">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="servicio.usersRegis.nombre">
+    <input type="number" min="0" name="cedula" placeholder="Cedula" [(ngModel)]="servicio.usersRegis.cedula">
+    <input type="number" min="0" name="celular" placeholder="Celular" [(ngModel)]="servicio.usersRegis.celular">
+    <input type="text" name="direccion" placeholder="Direccion" [(ngModel)]="servicio.usersRegis.direccion">
+    <input type="text" name="correo" placeholder="Correo" [(ngModel)]="servicio.usersRegis.correo">
+    <input type="text" name="ocupacion" placeholder="Ocupacion" [(ngModel)]="servicio.usersRegis.ocupacion">
+    <input type="number" min="0" name="ingresos" placeholder="Ingresos" [(ngModel)]="servicio.usersRegis.ingresos">
+    <input type="number" min="0" name="edad" placeholder="Edad" [(ngModel)]="servicio.usersRegis.edad">
+    <input type="text" name="usuario" placeholder="Usuario" [(ngModel)]="servicio.usersRegis.usuario">
+    <input type="text" name="password" placeholder="Contraseña" [(ngModel)]="servicio.usersRegis.password">
+    <select name="preferencias" [(ngModel)]="servicio.usersRegis.preferencias">
         <option value="">Selecciona</option>
         <option value="domesticos">Domesticos</option>
         <option value="acuaticos">Acuaticos</option>
     </select>
-    <select name="sexo" [(ngModel)]="ServiceService.usersRegis.sexo">
+    <select name="sexo" [(ngModel)]="servicio.usersRegis.sexo">
         <option value="hombre">Hombre</option>
         <option value="mujer">Mujer</option>
         <option value="otro">Otro</option>
     </select>
-    <input type="text" name="imagenperfil" placeholder="Imagen" [(ngModel)]="ServiceService.usersRegis.imagenperfil">
-    <textarea type="text" name="pasatiempo" placeholder="Escribe tus pasatiempos" [(ngModel)]="ServiceService.usersRegis.pasatiempo"></textarea>
+    <input type="text" name="imagenperfil" placeholder="Imagen" [(ngModel)]="servicio.usersRegis.imagenperfil">
+    <textarea type="text" name="pasatiempo" placeholder="Escribe tus pasatiempos" [(ngModel)]="servicio.usersRegis.pasatiempo"></textarea>
     <button type="submit">Enviar</button>
 </form>

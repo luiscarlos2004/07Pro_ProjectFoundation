@@ -13,23 +13,11 @@ const registrosUser = Schema({
         require:[true,'El celular es obligatorio']
     },
     direccion:String,
-    correo:{
-        type:String,
-        require:[true,'El correo es obligatorio']
-    },
     ocupacion:String,
     ingresos:Number,
     edad:{
         type:Number,
         require:[true,'La edad es obligatoria']
-    },
-    usuario:{
-        type:String,
-        require:[true,'El usuario es obligatorio']
-    },
-    password:{
-        type:String,
-        require:[true,'La contraseña es obligatoria']
     },
     preferencias:String,
     sexo:String,
@@ -39,7 +27,6 @@ const registrosUser = Schema({
         type:Date,
         default:new Date()
     }
-
 })
 
 module.exports = model('registrosUser',registrosUser)

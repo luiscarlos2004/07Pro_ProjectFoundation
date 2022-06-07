@@ -27,7 +27,14 @@ const resgistrarUsuarios = async(req,res)=>{
         rol
     }
     await new registroUser(resto).save();
-    await new users(obj).save();
+    let {_id} = await registroUser.findOne(resto);
+    let iduser = _id;
+    let obj2 = {
+        ...obj,
+        iduser
+    }
+    await new users(obj2).save();
+    res.send(true)
 }
 const cargarUsuarios = async(req,res)=>{
     let doc = await users.find();

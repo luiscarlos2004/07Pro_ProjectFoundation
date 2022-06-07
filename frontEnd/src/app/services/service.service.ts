@@ -33,8 +33,8 @@ export class ServiceService {
     preferencias:'',
     sexo:'',
     imagenperfil:'',
-    pasatiempo:'',
-    fecha:''
+    pasatiempo:''
+    // fecha:''
   }
   postUsers(datos:Users){
     let peticion = this.http.post(this.URL + '/api/users', datos)
@@ -49,7 +49,7 @@ export class ServiceService {
     return peticion;
   }
   registrarUsers(datos:Register){
-    console.log(datos)
+    // console.log(datos)
     let peticion = this.http.post(this.URL + '/api/users/register', datos);
     return peticion;
   }

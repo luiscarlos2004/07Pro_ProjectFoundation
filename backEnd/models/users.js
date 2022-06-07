@@ -1,3 +1,4 @@
+const { type } = require('express/lib/response');
 const {Schema,model} = require('mongoose');
 
 const usuario = Schema({
@@ -16,6 +17,7 @@ const usuario = Schema({
     rol:{
         type:String,
         default:'USER'
-    }
+    },
+    iduser:String
 })
 module.exports = model('usuario',usuario);

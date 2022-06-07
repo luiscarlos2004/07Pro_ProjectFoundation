@@ -13,5 +13,5 @@ export type Register = {
     sexo:string,
     imagenperfil:string,
     pasatiempo:string,
-    fecha:string
+    // fecha?:string
 }
