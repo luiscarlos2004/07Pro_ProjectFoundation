@@ -7,6 +7,9 @@ import {DaradopcionComponent} from './components/daradopcion/daradopcion.compone
 import {DonacionesComponent} from './components/donaciones/donaciones.component'
 import {RegistroComponent} from './components/registro/registro.component'
 import {ContactoComponent} from './components/contacto/contacto.component'
+import {LoginComponent} from './components/login/login.component'
+import {DashbordComponent} from './components/dashbord/dashbord.component'
+import{AgregarMascotasComponent } from './components/agregar-mascotas/agregar-mascotas.component'
 
 const routes: Routes = [{
 
@@ -43,6 +46,20 @@ component: RegistroComponent
 {
   path: 'contacto',
   component: ContactoComponent
+},
+{
+ path: 'login',
+ component: LoginComponent
+
+},{
+  path:'administrador',
+component: DashbordComponent
+},
+{
+path: "crearMascota",
+component : AgregarMascotasComponent 
+   
+
 }
 ];
 
