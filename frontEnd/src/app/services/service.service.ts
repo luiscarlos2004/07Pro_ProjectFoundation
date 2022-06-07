@@ -24,4 +24,10 @@ export class ServiceService {
     let peticion = this.http.get(this.URL + '/get_Mascotas')
     return peticion
   }
+
+
+  getExperiencias(){ 
+    let peticion = this.http.get(this.URL + '/get_experiencias')
+    return peticion
+  }
 }

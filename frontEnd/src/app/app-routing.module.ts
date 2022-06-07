@@ -7,6 +7,7 @@ import {DaradopcionComponent} from './components/daradopcion/daradopcion.compone
 import {DonacionesComponent} from './components/donaciones/donaciones.component'
 import {RegistroComponent} from './components/registro/registro.component'
 import {ContactoComponent} from './components/contacto/contacto.component'
+import {ExperienciasComponent} from './components/experiencias/experiencias.component'
 
 const routes: Routes = [{
 
@@ -43,7 +44,13 @@ component: RegistroComponent
 {
   path: 'contacto',
   component: ContactoComponent
+},
+
+{
+  path: 'experiencias',
+  component: ExperienciasComponent
 }
+
 ];
 
 @NgModule({
