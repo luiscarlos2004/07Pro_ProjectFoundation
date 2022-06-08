@@ -1,91 +1,67 @@
 <!-- Coloca en el navbar del inicio y hacer un vinculo en el inicio -->
 
 
-<h1>Aqui estamos en adoptame</h1>
+<br>
+
+<h1 class="d-flex justify-content-center">ADOPTA UN AMIGO</h1>
+<br>
 
 <br>
 
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-3 g-4 ms-1 me-1">
     <div class="col">
-        <div class="card h-100">
-            <img src="./../../../assets/img/pexels-alexandru-rotariu-733416.jpg" class="card-img-top" alt="...">
+        <div class="card h-75">
+            <img src="./../../../assets/img/pexels-alexandru-rotariu-733416.jpg" class="card-img-top h-50" alt="...">
             <div class="card-body">
-                <h5 class="card-title" name="nombre">Roco</h5>
-                <p class="card-text" name="">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <a routerLink='/registro'><button type="button" class="btn btn-success">Adoptame</button></a>
+                <h2 class="card-title d-flex justify-content-center" name="nombre">ROCO</h2>
+                <p class="card-text d-gle" name="historial">Roco es un pitbull que fue rescatado de una fabrica abandonada a las afueras de la ciudad, pero que se ha caracterizado por ser amigable y cariñoso</p>
+                <p>EDAD: 18 MESES</p>
+                <p>RAZA: PITBULL</p>
+                <p>VACUNAS: TODAS</p>
+                <P>TAMAÑO: MEDIANO</P>
+                <a routerLink='/registro' class="d-flex justify-content-center"><button type="button" class="btn btn-success">ADOPTAME</button></a>
             </div>
         </div>
     </div>
     <div class="col">
-        <div class="card h-100">
-            <img src="./../../../assets/img/pexels-dominika-roseclay-2023384.jpg" class="card-img-top" alt="...">
+        <div class="card h-75 ms-1 me-1">
+            <img src="./../../../assets/img/pexels-dominika-roseclay-2023384.jpg" class="card-img-top h-50" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Escubi</h5>
-                <p class="card-text">Escubi fue abandonado en la ciudad de houston</p>
-                <p>edad</p>
-                <p>raza</p>
-                <p>vacunas</p>
-                <p>tamaño</p>
-                <p>historial o antecedentes</p>
-
-                <a routerLink='/registro'><button type="button" class="btn btn-success">Adoptame</button></a>
+                <h2 class="card-title d-flex justify-content-center">ESCUBI</h2>
+                <p class="card-text" name="historial">Escubi fue abandonado en la ciudad de houston, fue recastado por una iglesia y dado en donacion a una persona que tenga buen corazon </p>
+                <p>EDAD: 18 MESES</p>
+                <p>RAZA: PITBULL</p>
+                <p>VACUNAS: TODAS</p>
+                <P>TAMAÑO: MEDIANO</P>
+                <a routerLink='/registro' class="d-flex justify-content-center"><button type="button" class="btn btn-success">ADOPTAME</button></a>
             </div>
         </div>
     </div>
     <div class="col">
-        <div class="card h-100">
-            <img src="./../../../assets/img/pexels-pixabay-257540.jpg" class="card-img-top" alt="...">
+        <div class="card h-75 ms-1 me-1">
+            <img src="./../../../assets/img/pexels-pixabay-257540.jpg" class="card-img-top h-50"  alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content.</p>
-                <a routerLink='/registro'><button type="button" class="btn btn-success">Adoptame</button></a>
+                <h2 class="card-title d-flex justify-content-center">LULO</h2>
+                <p class="card-text" name="historial">Lulo fue encontrado en zona rural de colombia, es una gran estado de abandona pero con el tiempo ha mostrado una mejoria en su salud.</p>
+                <p>EDAD: 18 MESES</p>
+                <p>RAZA: PITBULL</p>
+                <p>VACUNAS: TODAS</p>
+                <P>TAMAÑO: MEDIANO</P>    
+                <a routerLink='/registro' class="d-flex justify-content-center"><button type="button" class="btn btn-success">ADOPTAME</button></a>
             </div>
         </div>
     </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="./../../../assets/img/pexels-pixabay-257540.jpg" class="card-img-top" alt="...">
+    <div class="col" *ngFor="let mascota of serviceServ.documentos">
+        <div class="card h-75 ms-1 me-1" >
+            <img src="{{mascota.imagen}}" class="card-img-top h-50"  alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <a routerLink='/registro'><button type="button" class="btn btn-success">Adoptame</button></a>
+                <h2 class="card-title">{{mascota.nombre}}</h2>
+                <p class="card-text" name="historial">{{mascota.historial}}</p>
+                <p>RAZA: {{mascota.raza}}</p>
+                <p>VACUNAS: {{mascota.vacunas}}</p>
+                <P>TAMAÑO: {{mascota.tamano}}</P>    
+                <a routerLink='/registro' class="d-flex justify-content-center"><button type="button" class="btn btn-success">ADOPTAME</button></a>
             </div>
         </div>
     </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="./../../../assets/img/pexels-alexandru-rotariu-733416.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <a routerLink='/registro'><button type="button" class="btn btn-success">Adoptame</button></a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="./../../../assets/img/pexels-alexandru-rotariu-733416.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <a routerLink='/registro'><button type="button" class="btn btn-success">Adoptame</button></a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-          <img src="./../../../assets/img/pexels-alexandru-rotariu-733416.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <a routerLink='/registro'><button type="button" class="btn btn-success">Adoptame</button></a> 
-        </div>
-        </div>
-      </div>
-</div>

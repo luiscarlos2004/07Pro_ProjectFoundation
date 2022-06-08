@@ -10,6 +10,7 @@ import {ContactoComponent} from './components/contacto/contacto.component'
 import {LoginComponent} from './components/login/login.component'
 import {DashbordComponent} from './components/dashbord/dashbord.component'
 import{AgregarMascotasComponent } from './components/agregar-mascotas/agregar-mascotas.component'
+import {ExperienciasComponent} from './components/experiencias/experiencias.component'
 
 const routes: Routes = [{
 
@@ -60,6 +61,10 @@ path: "crearMascota",
 component : AgregarMascotasComponent 
    
 
+},
+{
+  path: 'experiencias',
+  component: ExperienciasComponent
 }
 ];
 
