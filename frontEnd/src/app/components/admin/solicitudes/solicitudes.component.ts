@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { ServiceService } from 'src/app/services/service.service';
 @Component({
   selector: 'app-solicitudes',
   templateUrl: './solicitudes.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public servicioanimales:ServiceService,private router:Router) { }
 
   ngOnInit(): void {
   }

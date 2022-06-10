@@ -11,12 +11,12 @@ const routes: Routes = [
   {
     path:'pagina',
     loadChildren: () => import('./components/PaginaPrincipal/module-principal.module').then(m=>m.ModulePrincipalModule),
-    canLoad: [ AuthGuard ]
+    // canLoad: [ AuthGuard ]
   },
   {
     path:'admin',
     loadChildren: () => import('./components/admin/admin-module.module').then(m => m.AdminModuleModule),
-    canLoad: [ AuthGuard ]
+    // canLoad: [ AuthGuard ]
   },
   {
     path:'404',
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path:'**',
-    redirectTo: 'auth/login'
+    redirectTo: 'auth'
   }
 ];
 

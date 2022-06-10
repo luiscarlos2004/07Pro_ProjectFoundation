@@ -1,0 +1,58 @@
+#main{
+    display: flex;
+    
+}
+#aside{
+    padding: 30px;
+    background-color: rgb(220, 220, 220);
+    box-shadow: 1px 1px 5px 1px rgb(174, 174, 174),2px 2px 6px 2px rgb(171, 170, 170);
+    width: 300px;
+    height: 100vh;
+}
+.titulodash{
+    display: flex;
+    border-bottom: 1px solid rgb(173, 171, 171);
+}
+.titulodash img{
+    width: 80px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+.titulodash .tidas{
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#aside .nav{
+    margin-top: 30px;
+    width: 100%;
+}
+#aside .nav li{
+    padding-bottom: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+#aside .nav li:hover{
+    padding: 5px;
+    background-color: #42E6A4;
+    border-radius: 50px;
+    
+}
+#aside .nav li:hover a{
+    padding-left: 10px;
+    color: white;
+}
+#aside .nav li a{
+    text-decoration: none;
+    color: gray;
+    font-size: 19px;
+    font-weight: 100;
+}
+.dashbord{
+    margin-left: 50px;
+}
+.dashbord h1{
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 200;
+}

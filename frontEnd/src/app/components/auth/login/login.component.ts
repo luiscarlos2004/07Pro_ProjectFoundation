@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.servicioComponent.postUsers(datos.value).subscribe({
       next:(res)=>{
         
-        this.consultarEstados(res)
+        // this.consultarEstados(res)
         
         Swal.fire({
           position: 'center',
@@ -47,12 +47,13 @@ export class LoginComponent implements OnInit {
           if(rol=='ADMIN'){
             this.router.navigate(['admin/']);
           }else{
-            this.router.navigate(['pagina/']);
+            this.router.navigate(['pagina/inicioprincipal']);
           }
         }
         // this.router.navigate(['pagina/']);
       },
       error:(err)=>{
+        console.log(err)
         Swal.fire({
           icon: 'error',
           title: 'Error al iniciar seción',

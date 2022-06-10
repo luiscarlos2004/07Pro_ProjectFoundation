@@ -1,0 +1,44 @@
+<!-- se ejecuta en el dashbord para el admin ingresar la mascota -->
+<div id="tablaUsuarios">
+   <div class="text-center">
+      <h1>Ingresa una nueva mascota para que sea adoptada</h1>
+   </div>
+
+   <body class="text-center">
+
+   <main class="form-signin w-100 d-flex justify-content-center">
+      <form style="width: 650px;" class=' p-5 shadow p-3 mb-5 bg-body rounded' #formularioAgregarMascota="ngForm" (ngSubmit)="agregarAnimal(formularioAgregarMascota)">
+               <img class="mb-4" src="https://tse1.mm.bing.net/th?id=OIP.XklayVAfQqM2N86Xfl07QwHaHa&pid=Api&P=0&w=160&h=160" alt="" width="80" height="67">
+            <div class='form-floating mb-2 mt-4'>
+               <input class="" type="text" placeholder="nombre" name="nombre" [(ngModel)]="ServicioAdmin.animalesRegistra.nombre">
+            </div>
+            <div class="form-floating mb-2 mt-4">
+            <input class="" type="text" placeholder="edad" name="edad" [(ngModel)]="ServicioAdmin.animalesRegistra.edad">
+            </div>
+            <div class="form-floating mb-2 mt-4">
+            <input class="" type="text" placeholder="raza" name="raza" [(ngModel)]="ServicioAdmin.animalesRegistra.raza">
+            </div> 
+            <div class='form-floating mb-2 mt-4'> 
+            <input class='' type="text" placeholder="imagen" name="imagen" [(ngModel)]="ServicioAdmin.animalesRegistra.imagen">
+         </div> 
+         <div class="form-floating mb-2 mt-4">
+            <input type="text" placeholder="tamaÃ±o" name="tamano" [(ngModel)]="ServicioAdmin.animalesRegistra.tamano">
+         </div>
+         <div class="form-floating mb-2 mt-4" > 
+            <select name="vacunas" [(ngModel)]="ServicioAdmin.animalesRegistra.vacunas">
+                  <option value="">selecionar</option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+            </select>
+         </div> 
+         <div class="form-floating mb-2 mt-4">
+            <button class="mt-3 w-75 border border-none p-2 text-secondary rounded-3" style='background-color: #42E6A4;' type="submit">Guardar Mascota</button>
+         </div>
+         <div class="form-floating mb-2 mt-4">
+               <button class="mt-3 w-75 border border-none p-2 text-secondary rounded-3" style='background-color: #a8dde1;' type="button">Limpiar Formulario</button>
+         </div>
+         </form> 
+   </main>
+   </body>
+</div>
+

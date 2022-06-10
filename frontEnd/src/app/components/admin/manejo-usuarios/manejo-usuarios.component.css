@@ -1,0 +1,45 @@
+#tablaUsuarios{
+    margin-left: 18%;
+    margin-top: -43%;
+    margin-right: 3%;
+}
+#tablaUsuarios h1{
+    margin-bottom: 60px;
+    font-size: 20px;
+    font-weight: 200;
+}
+#tablaUsuarios table,
+#tablaUsuarios table tr{
+    border: 1px solid black;
+}
+#tablaUsuarios tr td{
+    border-right: 1px solid gray;
+}
+.btneliminar,
+.btneditar{
+    padding: 8px;
+    margin: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    border: none;
+}
+.btneliminar{
+    background-color: #a8dde1;
+}
+.btneditar{
+    background-color: #42E6A4;
+}
+.paginador{
+    display: flex;
+    justify-content: flex-end;
+}
+.btnpaginador{
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}

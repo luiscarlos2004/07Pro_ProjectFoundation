@@ -1,5 +1,24 @@
 <!-- Manejado por el admin para administrar la aplicacion -->
-<h1>Bienvenido admin</h1>
-<button (click)="cerrar()">Salir</button>
-<li><a routerLink="/admin/usuarios">usuarios</a></li>
+
+<div id="main">
+    <div id="aside">
+        <div class="titulodash">
+            <img class="img" src="https://tse1.mm.bing.net/th?id=OIP.XklayVAfQqM2N86Xfl07QwHaHa&pid=Api&P=0&w=160&h=160">
+            <p class="tidas">Caninos</p>
+        </div>
+        <ul class="nav">
+            <li><a routerLink="/admin/">Dashbord</a></li>
+            <li><a routerLink="/admin/usuarios">Usuarios</a></li>
+            <li><a routerLink="/admin/agregarmascota">Agregar mascota</a></li>
+            <li><a routerLink="/admin/mascotas">Mascotas</a></li>
+            <li><a (click)="cerrar()">Salir</a></li>
+        </ul>
+    </div>
+        
+    <div class="dashbord">
+        <h1>Bienvenido admin</h1>
+    </div>
+</div>
 <router-outlet></router-outlet>
+
+

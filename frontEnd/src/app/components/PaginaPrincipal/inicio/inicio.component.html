@@ -1,5 +1,61 @@
 <!-- informacion de la empresa, cartas, galeria, preguntas frecuente -->
 <h1>{{auth.correo}}</h1>
 <button (click)="cerrar()">Salir</button>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptate ipsam aspernatur ipsa aut totam illum fugiat fugit omnis accusantium est, voluptas quaerat ut debitis velit error illo, ullam ratione.</p>
 
+<!-- Inicio navegacion -->
+
+<div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <p class="mb-0 phone pl-md-2">
+                    <a routerLink="/pagina/inicioprincipal" class="mr-2"><span class="fa fa-phone mr-1"></span>INICIO</a>
+                    <a href="#"><span class="fa fa-paper-plane mr-1"></span>MASCOTAS DE LA GRANJA</a>
+                </p>
+            </div>
+            <div class="col-md-6 d-flex justify-content-md-end">
+                <div class="social-media">
+                    <p class="mb-0 d-flex">
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span
+                                class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                        <a routerLink="/login"> <button class="btn btn-primary">Login </button></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand"><span class="flaticon-pawprint-1 mr-2"></span>Fundacion Caninos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a routerLink="/pagina/acercade" class="nav-link">Acerca de nosotros </a>
+                </li>
+                <li class="nav-item"><a routerLink="/pagina/adoptame" class="nav-link">Adoptame</a></li>
+                <li class="nav-item"><a routerLink="/pagina/daradopcion" class="nav-link">Dar en Adopcion</a></li>
+                <li class="nav-item"><a routerLink='/pagina/dardonacion' class="nav-link">Donaciones</a></li>
+                <li class="nav-item"><a routerLink='/pagina/contacto' class="nav-link">Contacto</a></li>
+                <li class="nav-item"><a routerLink='/pagina/opiniones' class="nav-link">Experiencias</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Fin navegacion -->
+
+
+<!-- Footer inicia -->
+
+<!-- Footer finaliza -->
+<router-outlet></router-outlet>

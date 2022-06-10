@@ -5,7 +5,8 @@ import { ManejoUsuariosComponent } from './manejo-usuarios/manejo-usuarios.compo
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { RecepcionDonacionesComponent } from './recepcion-donaciones/recepcion-donaciones.component';
 import { SolicitudesDarAdopcionComponent } from './solicitudes-dar-adopcion/solicitudes-dar-adopcion.component';
-
+import { AgregarMascotasComponent } from './agregar-mascotas/agregar-mascotas.component';
+import { MascotasComponent } from './mascotas/mascotas.component';
 const rutas:Routes = [
   {
     path:'',
@@ -26,6 +27,14 @@ const rutas:Routes = [
       {
         path:'daradopcion',
         component:SolicitudesDarAdopcionComponent
+      },
+      {
+        path:'agregarmascota',
+        component:AgregarMascotasComponent
+      },
+      {
+        path:'mascotas',
+        component:MascotasComponent
       },
       {
         path:'**',

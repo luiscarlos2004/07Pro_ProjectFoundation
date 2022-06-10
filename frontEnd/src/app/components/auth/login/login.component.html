@@ -1,14 +1,24 @@
 <!-- login de la aplicacion -->
-<h1>Login</h1>
-<div [ngClass]="forma">
-    <form #formularioLogin="ngForm" (ngSubmit)="enviardatos(formularioLogin)">
-        <!-- <input type="hidden" name="_id" [(ngModel)]="servicioComponent.users._id"> -->
-        <input type="text" name="correo" placeholder="Digite su correo" [(ngModel)]="servicioComponent.users.correo">
-        <input type="password" name="password" placeholder="Digite su contraseña" [(ngModel)]="servicioComponent.users.password">
-        <button id="button"  type="submit">Ingresar</button>
-    </form>
-</div>
-<li><a routerLink="/auth/registro">registrarse</a></li>
 
-
-
+<body class="text-center">
+    <main class="form-signin w-100 d-flex justify-content-center" style="margin-top: 10%;">
+        <div [ngClass]="forma">
+            <form style="width: 450px;" class=" p-5 shadow p-3 mb-5 bg-body rounded" #formularioLogin="ngForm" (ngSubmit)="enviardatos(formularioLogin)">
+                <img class="mb-4" src="https://tse1.mm.bing.net/th?id=OIP.XklayVAfQqM2N86Xfl07QwHaHa&pid=Api&P=0&w=160&h=160" alt="" width="80" height="67">
+                <h1 class="h3 mb-3 fw-normal">Página de Login</h1>
+                <!-- <input type="hidden" name="_id" [(ngModel)]="servicioComponent.users._id"> -->
+                <div class="form-floating mb-2 mt-4">
+                    <input type="text" class="form-control" id="floatingInput" name="correo" placeholder="Digite su correo" [(ngModel)]="servicioComponent.users.correo">
+                    <label for="floatingInput" >Correo</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control " id="floatingPassword" name="password" placeholder="Digite su contraseña" [(ngModel)]="servicioComponent.users.password">
+                    <label for="floatingPassword">Contraseña</label>
+                </div>
+                <button id="button" class="mt-3 w-75 border border-none p-2 text-secondary rounded-3" style="background-color: #42E6A4;" type="submit">Ingresar</button>
+                <button id="button" class="mt-3 w-75 border border-none p-2 text-secondary rounded-3" style="background-color: #a8dde1;" type="button"><a style="text-decoration: none;" class="text-secondary" routerLink="/auth/registro">registrarse</a></button>
+                <p class="mt-5 mb-2 text-white">&copy; Fundacion Caninos</p>
+            </form>
+        </div>
+    </main>
+  </body>

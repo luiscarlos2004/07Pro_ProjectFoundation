@@ -12,13 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class RegistroComponent implements OnInit {
   // nuevo:String = ''
-  constructor(public servicio:ServiceService, private router:Router) { }
+  constructor(public ServiceService:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
   }
   registrarUsers(datos:NgForm){
     // console.log(datos)
-    this.servicio.registrarUsers(datos.value).subscribe({
+    this.ServiceService.registrarUsers(datos.value).subscribe({
       next:(res)=>{
         console.log(res);
         Swal.fire({
@@ -37,7 +37,7 @@ export class RegistroComponent implements OnInit {
         Swal.fire({
           icon: 'error',
           title: 'Error al guardar los datos',
-          text: 'Correo o contraseñ invalida',
+          text: 'Correo o contraseña invalida',
           width:500,
           confirmButtonColor: '#3085d5', 
         })

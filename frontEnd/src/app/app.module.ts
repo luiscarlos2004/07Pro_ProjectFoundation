@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ErrorPageComponent } from './components/shared/error-page/error-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { ErrorPageComponent } from './components/shared/error-page/error-page.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
     
   ],
   providers: [],

@@ -3,6 +3,8 @@ import { HttpClient} from '@angular/common/http';
 import { Users } from '../models/users';
 import { tap } from 'rxjs/operators';
 import { Register } from '../models/registerusers';
+import { RegistrarAnimal } from '../models/registrarAnimal';
+import { Adop } from '../models/adoptame';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +17,7 @@ export class ServiceService {
     return {...this._auth!}
   }
   user:Users[]=[];
+  animales:RegistrarAnimal[]=[];
   users:Users = {
     correo : '',
     password : ''
@@ -36,6 +39,15 @@ export class ServiceService {
     pasatiempo:''
     // fecha:''
   }
+  animalesRegistra:RegistrarAnimal = {
+    nombre:'',
+    edad:0,
+    raza:'',
+    imagen:'',
+    tamano:'',
+    vacunas:'',
+  }
+  
   postUsers(datos:Users){
     let peticion = this.http.post(this.URL + '/api/users', datos)
                     .pipe(
@@ -56,5 +68,38 @@ export class ServiceService {
   getUsuariosDashbord(){
     let peticion = this.http.get<Users[]>(this.URL + '/api/users')
     return peticion;
+  }
+  paginador(numero:any){
+    let peticion = this.http.get<Users[]>(this.URL + '/api/users/paginador/' + numero);
+    return peticion;
+  }
+  agregarAnimaldos(datos:RegistrarAnimal){
+    let peticion = this.http.post(this.URL + '/api/users/registraranimal', datos);
+    return peticion;
+  }
+  // mostrarAnimal(){
+  //   let peticion = this.http.get<RegistrarAnimal[]>(this.URL + '/api/users/mostraranimal');
+  //   return peticion;
+  // }
+  buscarAnimal(numero:any){
+    let peticion = this.http.get<RegistrarAnimal[]>(this.URL + '/api/users/consultar/animales/' + numero);
+    return peticion;
+  }
+  eliminarmascota(id:string){
+    let peticion = this.http.delete(this.URL + '/api/users/eliminaranimal/' + id);
+    return peticion;
+  }
+  editarMascota(datos:RegistrarAnimal){
+    console.log(datos)
+    let peticion = this.http.put(this.URL + '/api/users/editar/editaranimal/'+datos._id,datos);
+    return peticion;
+  }
+  buscaraniamalesfront(){
+    let peticion = this.http.get<RegistrarAnimal[]>(this.URL + '/api/users/sacaranimal/animales');
+    return peticion;
+  }
+  solicitudadopcion(dato:Adop){
+    let peticion = this.http.post(this.URL + '/api/users/colocando/solicitudes',dato)
+    return peticion
   }
 }
