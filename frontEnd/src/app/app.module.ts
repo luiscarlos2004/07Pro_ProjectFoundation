@@ -20,6 +20,8 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { OpinionesComponent } from './components/opiniones/opiniones.component';
 import { DaradopcionComponent } from './components/daradopcion/daradopcion.component';
 import { SolicitudesDarAdopcionComponent } from './components/solicitudes-dar-adopcion/solicitudes-dar-adopcion.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { ExperienciasComponent } from './components/experiencias/experiencias.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,9 @@ import { SolicitudesDarAdopcionComponent } from './components/solicitudes-dar-ad
     AcercaDeComponent,
     OpinionesComponent,
     DaradopcionComponent,
-    SolicitudesDarAdopcionComponent
+    SolicitudesDarAdopcionComponent,
+    RegistroComponent,
+    ExperienciasComponent
   ],
   imports: [
     BrowserModule,

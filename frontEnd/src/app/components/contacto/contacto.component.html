@@ -1,1 +1,80 @@
-<!-- se despliega esta pagina cuando se selecciona en el navbar -->
+<body class="text-center">
+    <main class="form-signin w-100 d-flex justify-content-center" style="margin-top: 10%;">
+        <div>
+            <form style="width: 450px;" class=" p-5 shadow p-3 mb-5 bg-body rounded" form #formularioContactos="ngForm"
+                (ngSubmit)="agregarContacto(formularioContactos)">
+
+                <img class="mb-4"
+                    src="https://tse1.mm.bing.net/th?id=OIP.XklayVAfQqM2N86Xfl07QwHaHa&pid=Api&P=0&w=160&h=160" alt=""
+                    width="80" height="67">
+
+                <h1 class="h3 mb-3 fw-normal">Gracias por hacer parte de esta bonita labor!!!</h1>
+
+                <div class="form-floating mb-2 mt-4">
+                    <input type="text" class="form-control" placeholder="" name="nombre"
+                        [(ngModel)]="servicio.datosInputContactos.nombre">
+                    <label for="floatingInput">Ingresa tu nombre</label>
+                </div>
+
+                <div class="form-floating mb-2 mt-4">
+                    <input type="text" class="form-control" placeholder="" name="tel"
+                        [(ngModel)]="servicio.datosInputContactos.tel">
+                    <label for="floatingInput">Ingresa el numero de contacto</label>
+                </div>
+
+                <div class="form-floating mb-2 mt-4">
+                    <input type="text" class="form-control" placeholder="" name="correo"
+                        [(ngModel)]="servicio.datosInputContactos.correo">
+                    <label for="floatingInput">Ingresa el correo electronico</label>
+                </div>
+
+                <br>
+                <h3 class="h5 mb-3 fw-normal">Seleccione el motivo del contacto:</h3>
+
+
+                <select type="text" class="form-control" placeholder="Seleccione la entidad Financiera" name="asunto"
+                    [(ngModel)]="servicio.datosInputContactos.asunto">
+                    <option value="Solicitud">Solicitud</option>
+                    <option value="Sugerencia">Sugerencia</option>
+                    <option value="Queja">Queja</option>
+                    <option value="Reclamo">Reclamo</option>
+                    <option value="Felicitacion">Felicitacion</option>
+                </select>
+
+                <div class="form-floating mb-2 mt-4">
+                    <textarea name="descripcion" class="form-control" id="" cols="15" rows="10"
+                        [(ngModel)]="servicio.datosInputContactos.descripcion"></textarea>
+                    <label for="floatingInput">Ingresa la descripcion</label>
+                </div>
+
+                <br>
+
+                <button id="button" class="mt-3 w-75 border border-none p-2 text-secondary rounded-3"
+                    style="background-color: #42E6A4;" type="submit">Enviar</button>
+                <p class="mt-5 mb-2 text-black">&copy; Fundacion Caninos</p>
+            </form>
+        </div>
+
+    </main>
+
+    <table border="1" align="center" style="width: 450px;" class=" p-5 shadow p-3 mb-5 bg-body rounded">
+        <thead>
+            <th>Nombre</th>
+            <th>Numero de contacto</th>
+            <th>Correo Electronico</th>
+            <th>Asunto</th>
+            <th>Descripcion</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of servicio.contactos">
+                <td>{{ v.nombre }}</td>
+                <td>{{ v.tel }}</td>
+                <td>{{ v.correo }}</td>
+                <td>{{ v.asunto }}</td>
+                <td>{{ v.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
