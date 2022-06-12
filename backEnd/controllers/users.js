@@ -1,10 +1,11 @@
 const users = require('../models/users');
 const registroUser = require('../models/registrosUser');
 const animals = require('../models/registrarAnimales');
+const solicitudesmo = require('../models/solicitudadopcion')
 const postUsers = async(req,res)=>{
     let {correo,password} = req.body;
     let resp = await users.findOne({$and:[{correo},{password}]});
-    await users.updateOne({_id:resp.id},{estado:true})
+    await users.updateOne({_id:resp._id},{estado:true})
     if(resp){
         res.send(resp);
     }else{
@@ -67,7 +68,7 @@ const mostrarAnimales = async(req,res)=>{
 const eliminaranimal = async(req,res)=>{
     let ids = req.params.id;
     await animals.findByIdAndDelete(ids);
-    res.send('eliminado');
+    res.send(true);
 }
 const editaranimal = async(req,res)=>{
     const id = req.params.id;
@@ -81,8 +82,50 @@ const sacaranimalfront = async(req,res)=>{
     res.send(result);
 }
 const solicitudes = async(req,res)=>{
-    console.log(req.body)
-    res.send('datos guardados')
+    let idanimal = req.body.ida;
+    let idpersona = req.body.idu;
+    let {nombre,edad,raza,imagen,tamano,vacunas} = await animals.findById(idanimal);
+    let {iduser} = await users.findById(idpersona)
+    let {nombre:nombrep,cedula,celular,direccion,ocupacion,ingresos,edad:edadp,sexo} = await registroUser.findById(iduser);
+    let infosolicitud = {
+        nombre,edad,raza,imagen,tamano,vacunas,
+        nombrep,cedula,celular,direccion,ocupacion,ingresos,edadp,sexo,idanimal
+    }
+    // console.log(infoAnimal)
+    // console.log(infopersona)
+    // let solici = await solicitudesmo.find({cedula});
+    // console.log(cedula,cedula)
+    // if(cedula == cedula){
+        // res.send(false)
+    // }else{
+    await solicitudesmo(infosolicitud).save();
+    res.send(true)
+    // }
+    
+    
+}
+const consultarsolicitudes = async (req,res)=>{
+    let infosolicirudes = await solicitudesmo.find();
+    res.send(infosolicirudes)
+}
+const solicitudaceptada = async(req,res)=>{
+    let ide = req.params.id
+    const {idanimal,nombre} = await solicitudesmo.findById(ide)
+    let nom = nombre
+    await animals.findByIdAndRemove(idanimal);
+    // await solicitudesmo.find(nombre).remove();
+    await solicitudesmo.findByIdAndRemove(ide);
+    let otras = await solicitudesmo.find({nombre:nom}).remove();
+    res.send(true)
+}
+const buscaranimall = async(req,res)=>{
+    let busca = req.body.busqueda;
+    if(busca.length > 0){
+        let encontrado = await animals.find({nombre:{$in:[new RegExp(`${busca}`,'i')]}})
+        console.log(encontrado);
+        res.send(encontrado)
+    }
+    
 }
 module.exports = {
     postUsers,
@@ -95,5 +138,8 @@ module.exports = {
     eliminaranimal,
     editaranimal,
     sacaranimalfront,
-    solicitudes
+    solicitudes,
+    consultarsolicitudes,
+    solicitudaceptada,
+    buscaranimall
 }

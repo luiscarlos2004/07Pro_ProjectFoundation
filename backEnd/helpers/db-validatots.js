@@ -1,4 +1,5 @@
 const users = require('../models/users');
+const solicitude = require('../models/solicitudadopcion');
 
 const correoExiste = async(correo = '') =>{
     const correoExiste = await users.findOne({correo});
