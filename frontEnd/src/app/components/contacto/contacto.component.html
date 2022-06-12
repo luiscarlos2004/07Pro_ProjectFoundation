@@ -64,6 +64,8 @@
             <th>Correo Electronico</th>
             <th>Asunto</th>
             <th>Descripcion</th>
+            <th>Eliminar</th>
+            <th>Actualizar</th>
         </thead>
         <tbody>
             <tr *ngFor="let v of servicio.contactos">
@@ -72,6 +74,8 @@
                 <td>{{ v.correo }}</td>
                 <td>{{ v.asunto }}</td>
                 <td>{{ v.descripcion }}</td>
+                <td><button>Eliminar</button></td>
+                <td><button>Actualizar</button></td>
             </tr>
         </tbody>
     </table>

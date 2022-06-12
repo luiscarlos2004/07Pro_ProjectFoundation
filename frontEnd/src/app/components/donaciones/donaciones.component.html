@@ -81,6 +81,8 @@
             <th>Valor</th>
             <th>Cuotas</th>
             <th>Entidad Financiera</th>
+            <th>Eliminar</th>
+            <th>Actualizar</th>
         </thead>
         <tbody>
             <tr *ngFor="let d of servicio.donaciones">
@@ -90,6 +92,8 @@
                 <td>{{ d.valor }}</td>
                 <td>{{ d.cuotas }}</td>
                 <td>{{ d.banco }}</td>
+                <td><button>Eliminar</button></td>
+                <td><button>Actualizar</button></td>
             </tr>
         </tbody>
     </table>
