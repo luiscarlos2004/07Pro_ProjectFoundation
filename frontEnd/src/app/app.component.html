@@ -1,44 +1,3 @@
-<nav class="navbar bg-light fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Offcanvas navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</nav>
 
 
 
@@ -65,28 +24,41 @@
   </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-<div class="container">
-  <a class="navbar-brand" href="index.html"><span class="flaticon-pawprint-1 mr-2"></span>Patitas</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="fa fa-bars"></span> Menu
-</button>
-<div class="collapse navbar-collapse" id="ftco-nav">
-  <ul class="navbar-nav ml-auto">
-      <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
-      <li class="nav-item"><a href="about.html" class="nav-link">Adoptame</a></li>
-      <li class="nav-item"><a href="vet.html" class="nav-link">Acerca de</a></li>
-      <li class="nav-item"><a href="services.html" class="nav-link">Login</a></li>
-    <li class="nav-item"><a href="gallery.html" class="nav-link">Galeria</a></li>
-    <li class="nav-item"><a href="pricing.html" class="nav-link">Donaciones</a></li>
-    <li class="nav-item"><a href="blog.html" class="nav-link">Experiencias</a></li>
-    <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-  </ul>
-</div>
-</div>
-</nav>
+  <div class="container">
+    <a class="navbar-brand" routerLink="/inicio"><span class="flaticon-pawprint-1 mr-2"></span>Patitas</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="fa fa-bars"></span> Menu
+    </button>
+<ul class="navbar-nav ml-auto">
+      <li class="nav-item active"><a routerLink="/acerca" class="nav-link">Acerca de nosotros</a></li>
+      <li class="nav-item"><a routerLink="/adoptame" class="nav-link">Adoptame</a></li>
+      <li class="nav-item"><a routerLink="/daradopcion" class="nav-link">Dar en Adopcion</a></li>
+      <li class="nav-item"><a href="gallery.html" class="nav-link">Plan Padrino</a></li>
+      <li class="nav-item"><a routerLink='/donaciones' class="nav-link">Donaciones</a></li>
+      <li class="nav-item"><a routerLink="/registro" class="nav-link">Registro</a></li>
+      <li class="nav-item"><a routerLink='/contacto'class="nav-link">Contacto</a></li>
+      <li class="nav-item"><a routerLink='/experiencias'class="nav-link">Experiencias</a></li>
+    </ul>
+    </div>
+    </nav>
+ 
+    <router-outlet></router-outlet>
 
 
-<app-inicio></app-inicio>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -156,3 +128,4 @@
     </div>
   </div>
 </footer>
+ 

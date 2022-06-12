@@ -1,1 +1,101 @@
-<!-- despliega pagina de donaciones cartas o planes  (navbar) tener tambien una carta para direccionar aca en el inicio-->
+<body class="text-center">
+    <main class="form-signin w-100 d-flex justify-content-center" style="margin-top: 10%;">
+        <div>
+            <form style="width: 450px;" class=" p-5 shadow p-3 mb-5 bg-body rounded" #formularioDonaciones="ngForm" (ngSubmit)="agregarDonacion(formularioDonaciones)">
+
+                <img class="mb-4"
+                    src="https://tse1.mm.bing.net/th?id=OIP.XklayVAfQqM2N86Xfl07QwHaHa&pid=Api&P=0&w=160&h=160" alt=""
+                    width="80" height="67">
+
+                <h1 class="h3 mb-3 fw-normal">Gracias por hacer parte de esta bonita labor!!!</h1>
+                <hr>
+
+                <h1 class="h4 mb-3 fw-normal">Cuenta Bancaria</h1>
+
+                <img class="mb-4"
+                    src="data:image/png;base64,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"
+                    alt="" width="80" height="67">
+
+                <h1 class="h4 mb-3 fw-normal">Cuenta Corriente No. 1234567890</h1>
+
+                <h1 class="h4 mb-3 fw-normal">A nombre: Fundacion Caninos</h1>
+                <hr>
+
+                <h3 class="h4 mb-3 fw-normal">Inscripcion debito Automatico:</h3>
+
+                <div class="form-floating mb-2 mt-4">
+                    <input type="text" class="form-control" placeholder="Ingrese el nombre se la mascota"
+                        name="nombre" [(ngModel)]="servicio.datosInputDonaciones.nombre">
+                    <label for="floatingInput">Ingresa tu nombre</label>
+                </div>
+
+                <div class="form-floating mb-2 mt-4">
+                    <input type="text" class="form-control" placeholder="Ingrese el nombre se la mascota"
+                        name="cc" [(ngModel)]="servicio.datosInputDonaciones.cc">
+                    <label for="floatingInput">Numero de Cedula</label>
+                </div>
+
+                <div class="form-floating mb-2 mt-4">
+                    <input type="text" class="form-control" placeholder="Ingrese el nombre se la mascota"
+                        name="cuenta" [(ngModel)]="servicio.datosInputDonaciones.cuenta">
+                    <label for="floatingInput">Numero de cuenta bancaria</label>
+                </div>
+
+                <div class="form-floating mb-2 mt-4">
+                    <input type="number" class="form-control" placeholder="Ingrese el nombre se la mascota"
+                        name="valor" [(ngModel)]="servicio.datosInputDonaciones.valor">
+                    <label for="floatingInput">Ingresa el valor del aporte</label>
+                </div>
+
+                <div class="form-floating mb-2 mt-4">
+                    <input type="number" class="form-control" placeholder="Ingrese su nombre" name="cuotas" [(ngModel)]="servicio.datosInputDonaciones.cuotas">
+                    <label for="floatingInput">Ingresa el numero de aportes por mes</label>
+                </div>
+
+                <br>
+                <h3 class="h5 mb-3 fw-normal">Seleccione la entidad Financiera:</h3>
+
+         
+                    <select type="text" class="form-control" placeholder="Seleccione la entidad Financiera"
+                        name="banco" [(ngModel)]="servicio.datosInputDonaciones.banco">
+                    <option value="Bancolombia">Bancolombia</option>
+                    <option value="Banco_de_Occidente">Banco_de_Occidente</option>
+                    <option value="Banco_Caja_Social">Banco_Caja_Social</option>
+                    <option value="Banco_AV_Villas">Banco_AV_Villas</option>
+                </select>
+                
+                <br>
+
+                <button id="button" class="mt-3 w-75 border border-none p-2 text-secondary rounded-3"
+                    style="background-color: #42E6A4;" type="submit">Enviar</button>
+                <p class="mt-5 mb-2 text-black">&copy; Fundacion Caninos</p>
+            </form>
+        </div>
+    </main>
+
+    <table border="1" align="center" style="width: 450px;" class=" p-5 shadow p-3 mb-5 bg-body rounded">
+        <thead>
+            <th>Nombre</th>
+            <th>Numero de Cedula</th>
+            <th>Numero de Cuenta Bancaria</th>
+            <th>Valor</th>
+            <th>Cuotas</th>
+            <th>Entidad Financiera</th>
+            <th>Eliminar</th>
+            <th>Actualizar</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of servicio.donaciones">
+                <td>{{ d.nombre }}</td>
+                <td>{{ d.cc }}</td>
+                <td>{{ d.cuenta }}</td>
+                <td>{{ d.valor }}</td>
+                <td>{{ d.cuotas }}</td>
+                <td>{{ d.banco }}</td>
+                <td><button>Eliminar</button></td>
+                <td><button>Actualizar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
