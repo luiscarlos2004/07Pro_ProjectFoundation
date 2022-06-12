@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ServiceService} from '../../services/service.service'
 import { NgForm } from '@angular/forms';
+import {ActivatedRoute} from '@angular/router'
+import{AgregarMascotasComponent} from '../agregar-mascotas/agregar-mascotas.component'
 
 
 @Component({
@@ -20,7 +22,7 @@ export class AdoptameComponent implements OnInit {
     this.serviceServ.getAdoptame().subscribe({
       next: (res) => console.log(res),
       error: (err) => console.log(err),
- 
+          
      });
 
   }
@@ -30,7 +32,7 @@ export class AdoptameComponent implements OnInit {
     // console.log(form.value)
      this.serviceServ.create(form.value).subscribe(
        (res) => {
-         console.log('Agregando una nueva mascota');
+         console.log('Agregando una nueva masc');
          this.mascotasListado();
          form.reset();
        },

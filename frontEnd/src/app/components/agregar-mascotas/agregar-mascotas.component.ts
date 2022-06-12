@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServiceService} from '../../services/service.service'
 import { NgForm } from '@angular/forms';
-
+import{AdoptameComponent} from '../adoptame/adoptame.component'
 @Component({
   selector: 'app-agregar-mascotas',
   templateUrl: './agregar-mascotas.component.html',

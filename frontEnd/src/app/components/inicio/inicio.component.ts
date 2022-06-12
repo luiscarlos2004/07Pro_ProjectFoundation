@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServiceService} from '../../services/service.service';
 import {ActivatedRoute} from '@angular/router'
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-inicio',
@@ -18,5 +19,7 @@ export class InicioComponent implements OnInit {
 
     });
   }
+
+  
 
 }

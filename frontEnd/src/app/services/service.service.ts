@@ -6,7 +6,7 @@ import { Mascota_modelo } from '../models/mascotas';
   providedIn: 'root'
 })
 export class ServiceService {
-  URL= 'http://localhost:4000'
+  URL_API= 'http://localhost:4000'
   constructor(private http:HttpClient) { }
 
   documentos: Mascota_modelo[] =[];
@@ -27,22 +27,32 @@ export class ServiceService {
     password : ''
   }
   getUsers(){
-    let peticion = this.http.get<Users>(this.URL + '/api/users');
+    let peticion = this.http.get<Users>(this.URL_API + '/api/users');
     return peticion;
   }
   postUsers(datos:Users){
-    let peticion = this.http.post(this.URL + '/api/users', datos);
+    let peticion = this.http.post(this.URL_API + '/api/users', datos);
     return peticion;
   }
 
   getAdoptame(){
-    let peticion = this.http.get<Mascota_modelo[]>(this.URL + '/api/users/get_Mascotas')
+    let peticion = this.http.get<Mascota_modelo[]>(this.URL_API + '/api/users/get_Mascotas')
     return peticion
+    console.log("esta retornando la mascota")
   }
 
   create(datos: Mascota_modelo){
-  let peticion = this.http.post(this.URL + '/api/users/crear_mascota', datos);
+  let peticion = this.http.post(this.URL_API + '/api/users/crear_mascota', datos);
   return peticion
+  
+
+  }
+
+
+  obtenerDonaciones(){
+    let peticion = this.http.get(this.URL_API + '/obtener_donaciones')
+   return 
+
 
   }
 }

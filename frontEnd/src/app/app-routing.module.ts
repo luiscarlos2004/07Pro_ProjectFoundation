@@ -11,6 +11,7 @@ import {LoginComponent} from './components/login/login.component'
 import {DashbordComponent} from './components/dashbord/dashbord.component'
 import{AgregarMascotasComponent } from './components/agregar-mascotas/agregar-mascotas.component'
 import {ExperienciasComponent} from './components/experiencias/experiencias.component'
+export {AppComponent} from './app.component'
 
 const routes: Routes = [{
 
@@ -24,7 +25,7 @@ component: InicioComponent
 
 },
 {
-path:"acerca",
+path:"acerca2",
 component: AcercaDeComponent
 
 },

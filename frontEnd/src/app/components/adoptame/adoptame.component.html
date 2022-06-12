@@ -1,67 +1,76 @@
 <!-- Coloca en el navbar del inicio y hacer un vinculo en el inicio -->
 
 
-<br>
-
-<h1 class="d-flex justify-content-center">ADOPTA UN AMIGO</h1>
-<br>
-
-<br>
-
-
-<div class="row row-cols-1 row-cols-md-3 g-4 ms-1 me-1">
-    <div class="col">
-        <div class="card h-75">
-            <img src="./../../../assets/img/pexels-alexandru-rotariu-733416.jpg" class="card-img-top h-50" alt="...">
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center" name="nombre">ROCO</h2>
-                <p class="card-text d-gle" name="historial">Roco es un pitbull que fue rescatado de una fabrica abandonada a las afueras de la ciudad, pero que se ha caracterizado por ser amigable y cariñoso</p>
-                <p>EDAD: 18 MESES</p>
-                <p>RAZA: PITBULL</p>
-                <p>VACUNAS: TODAS</p>
-                <P>TAMAÑO: MEDIANO</P>
-                <a routerLink='/registro' class="d-flex justify-content-center"><button type="button" class="btn btn-success">ADOPTAME</button></a>
-            </div>
-        </div>
+<div id="tablaUsuarios">
+    <h1>Usuarios registrados</h1>
+    <table class="table table-dark table-striped">
+        <tr class="table-primary">
+            <th>Nombre</th>
+            <th>cosa</th>
+            <th>dasd</th>
+            <th>dd</th>
+            <th>dd</th>
+            <th>dd</th>
+            <th>Funcionalidades</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <button class="btneliminar" >Eliminar</button>
+            <button class="btneditar" >Editar</button>
+        </tr>
+    </table>
+    <div class="paginador">
+        <p class="btnpaginador">
+            << /p>
+                <p class="btnpaginador" >1</p>
+                <p class="btnpaginador" >2</p>
+                <p class="btnpaginador" >3</p>
+                <p class="btnpaginador" >4</p>
+                <p class="btnpaginador">...</p>
+                <p class="btnpaginador" >></p>
     </div>
-    <div class="col">
-        <div class="card h-75 ms-1 me-1">
-            <img src="./../../../assets/img/pexels-dominika-roseclay-2023384.jpg" class="card-img-top h-50" alt="...">
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center">ESCUBI</h2>
-                <p class="card-text" name="historial">Escubi fue abandonado en la ciudad de houston, fue recastado por una iglesia y dado en donacion a una persona que tenga buen corazon </p>
-                <p>EDAD: 18 MESES</p>
-                <p>RAZA: PITBULL</p>
-                <p>VACUNAS: TODAS</p>
-                <P>TAMAÑO: MEDIANO</P>
-                <a routerLink='/registro' class="d-flex justify-content-center"><button type="button" class="btn btn-success">ADOPTAME</button></a>
-            </div>
+</div>
+
+<main class="form-signin w-100 d-flex justify-content-center">
+    <form style="width: 650px;" class=' p-5 shadow p-3 mb-5 bg-body rounded'>
+        <input type="hidden" name="_id" placeholder="id" >
+        <img class="mb-4" src="https://tse1.mm.bing.net/th?id=OIP.XklayVAfQqM2N86Xfl07QwHaHa&pid=Api&P=0&w=160&h=160"
+            alt="" width="80" height="67">
+        <!-- <input type="text" [(ngModel)]="Servicio.animalesRegistra._id"> -->
+        <div class='form-floating mb-2 mt-4'>
+            <input class="" type="text" placeholder="nombre" name="nombre">
         </div>
-    </div>
-    <div class="col">
-        <div class="card h-75 ms-1 me-1">
-            <img src="./../../../assets/img/pexels-pixabay-257540.jpg" class="card-img-top h-50"  alt="...">
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center">LULO</h2>
-                <p class="card-text" name="historial">Lulo fue encontrado en zona rural de colombia, es una gran estado de abandona pero con el tiempo ha mostrado una mejoria en su salud.</p>
-                <p>EDAD: 18 MESES</p>
-                <p>RAZA: PITBULL</p>
-                <p>VACUNAS: TODAS</p>
-                <P>TAMAÑO: MEDIANO</P>    
-                <a routerLink='/registro' class="d-flex justify-content-center"><button type="button" class="btn btn-success">ADOPTAME</button></a>
-            </div>
+        <div class="form-floating mb-2 mt-4">
+            <input class="" type="text" placeholder="edad" name="edad" >
         </div>
-    </div>
-    <div class="col" *ngFor="let mascota of serviceServ.documentos">
-        <div class="card h-75 ms-1 me-1" >
-            <img src="{{mascota.imagen}}" class="card-img-top h-50"  alt="...">
-            <div class="card-body">
-                <h2 class="card-title">{{mascota.nombre}}</h2>
-                <p class="card-text" name="historial">{{mascota.historial}}</p>
-                <p>RAZA: {{mascota.raza}}</p>
-                <p>VACUNAS: {{mascota.vacunas}}</p>
-                <P>TAMAÑO: {{mascota.tamano}}</P>    
-                <a routerLink='/registro' class="d-flex justify-content-center"><button type="button" class="btn btn-success">ADOPTAME</button></a>
-            </div>
+        <div class="form-floating mb-2 mt-4">
+            <input class="" type="text" placeholder="raza" name="raza">
         </div>
-    </div>
+        <div class='form-floating mb-2 mt-4'>
+            <input class='' type="text" placeholder="imagen" name="imagen">
+        </div>
+        <div class="form-floating mb-2 mt-4">
+            <input type="text" placeholder="tamaÃ±o" name="tamano">
+        </div>
+        <div class="form-floating mb-2 mt-4">
+            <select name="vacunas">
+                <option value="">selecionar</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="form-floating mb-2 mt-4">
+            <button class="mt-3 w-75 border border-none p-2 text-secondary rounded-3" style='background-color: #42E6A4;'
+                type="submit">Guardar Mascota</button>
+        </div>
+        <div class="form-floating mb-2 mt-4">
+            <button class="mt-3 w-75 border border-none p-2 text-secondary rounded-3" style='background-color: #a8dde1;'
+                type="button">Limpiar Formulario</button>
+        </div>
+    </form>
+</main>
