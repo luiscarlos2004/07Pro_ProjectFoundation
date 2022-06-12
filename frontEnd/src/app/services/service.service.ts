@@ -5,6 +5,8 @@ import { tap } from 'rxjs/operators';
 import { Register } from '../models/registerusers';
 import { RegistrarAnimal } from '../models/registrarAnimal';
 import { Adop } from '../models/adoptame';
+import { Solicitudes } from '../models/solicitudesmodel';
+import { Buscar } from '../models/buscar';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +19,18 @@ export class ServiceService {
     return {...this._auth!}
   }
   user:Users[]=[];
-  animales:RegistrarAnimal[]=[];
+  animales:any=[];
+  solici:Solicitudes[]=[];
+  busca:any=[];
+  buscar:Buscar = {
+    busqueda:'',
+    nombre:'',
+    edad:0,
+    raza:'',
+    imagen:'',
+    tamano:'',
+    vacunas:'',
+  }
   users:Users = {
     correo : '',
     password : ''
@@ -100,6 +113,18 @@ export class ServiceService {
   }
   solicitudadopcion(dato:Adop){
     let peticion = this.http.post(this.URL + '/api/users/colocando/solicitudes',dato)
+    return peticion
+  }
+  obtenersolicitudes(){
+    let peticion = this.http.get<Solicitudes[]>(this.URL + '/api/users/solicitud/solicitudesanimales')
+    return peticion
+  }
+  aceptarsolicitud(id:any){
+    let peticion = this.http.get(this.URL + '/api/users/solicituda/solicitudanimal/' + id )
+    return peticion
+  }
+  busquedaanimal(datos:Buscar){
+    let peticion = this.http.post(this.URL + '/api/users/buscan/buscaranimal',datos)
     return peticion
   }
 }

@@ -39,24 +39,32 @@ export class AdoptameComponent implements OnInit {
     }).then((result) => {
       if(result.isConfirmed){
         this.servicio.solicitudadopcion(obj).subscribe({
-          next:(res)=>{console.log(res)},
-          error:(err)=>{console.log(err)}
+          next:(res)=>{
+            if(res){
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'solicitud recibida',
+                showConfirmButton: false,
+                timer: 2000,
+                background: '#fff url(/images/trees.png)',
+                backdrop: `
+                  rgba(0,0,123,0.4)
+                  url("https://www.gifsanimados.org/data/media/202/perro-imagen-animada-0811.gif")
+                  left top
+                  no-repeat
+                `
+              })
+            }else{
+              Swal.fire('Tiene una solicitud en proceso', '', 'error')
+            }
+            
+          },
+          error:(err)=>{
+            console.log(err)
+            // Swal.fire('Tiene una solicitud en proceso', '', 'error')
+          }
         });
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'solicitud recibida',
-          showConfirmButton: false,
-          timer: 2000,
-          background: '#fff url(/images/trees.png)',
-          backdrop: `
-            rgba(0,0,123,0.4)
-            url("https://www.gifsanimados.org/data/media/202/perro-imagen-animada-0811.gif")
-            left top
-            no-repeat
-          `
-        })
-        
       }else if(result.isDenied){
         Swal.fire('Cancelado con exito', '', 'error')
       }
