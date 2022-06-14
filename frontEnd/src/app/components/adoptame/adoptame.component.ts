@@ -8,7 +8,7 @@ import{AgregarMascotasComponent} from '../agregar-mascotas/agregar-mascotas.comp
 @Component({
   selector: 'app-adoptame',
   templateUrl: './adoptame.component.html',
-  styleUrls: ['./adoptame.component.css']
+  styleUrls: ['../../app.component.css']
 })
 export class AdoptameComponent implements OnInit {
 
@@ -20,7 +20,10 @@ export class AdoptameComponent implements OnInit {
 
   mascotasListado(){
     this.serviceServ.getAdoptame().subscribe({
-      next: (res) => console.log(res),
+      next: (res) => {
+      console.log("obteniendo mascotas");
+      this.serviceServ.documentos = res;
+      },
       error: (err) => console.log(err),
           
      });
