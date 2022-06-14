@@ -1,4 +1,49 @@
 <body class="text-center">
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+    <div class="col">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1458924/pexels-photo-1458924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
   <main class="form-signin w-100 d-flex justify-content-center" style="margin-top: 10%;">
     <div>
       <form style="width: 450px;" class=" p-5 shadow p-3 mb-5 bg-body rounded" form #formularioExperiencias="ngForm"
@@ -8,13 +53,13 @@
         <h1 class="h3 mb-3 fw-normal">Cuentanos tu Experiencia</h1>
 
         <div class="form-floating mb-2 mt-4">
-          <input type="text" class="form-control" placeholder="Ingrese su nombre" name="nombre"
+          <input type="text" class="form-control"  name="nombre"
             [(ngModel)]="servicio.datosInputExperiencias.nombre">
           <label for="floatingInput">Ingresa tu nombre</label>
         </div>
 
         <div class="form-floating mb-2 mt-4">
-          <input type="text" class="form-control" placeholder="Ingrese el nombre se la mascota" name="mascota"
+          <input type="text" class="form-control"  name="mascota"
             [(ngModel)]="servicio.datosInputExperiencias.mascota">
           <label for="floatingInput">Ingresa el nombre de tu mascota</label>
         </div>
@@ -55,5 +100,47 @@
 
   </table>
 
+
+
 </body>
 
+<section class="ftco-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center pb-5 mb-3">
+      <div class="col-md-7 heading-section text-center ftco-animate">
+        <h2>Latest news from our blog</h2>
+      </div>
+    </div> 
+    <div class="row d-flex">
+  
+       <div class="col-md-4 d-flex">
+        <div class="blog-entry align-self-stretch">
+          <a href="blog-single.html" class="block-20 rounded" style="background-image: url('../../../assets/images/image_3.jpg');">
+          </a>
+          <div class="text p-4">
+            <div class="meta mb-2">
+              <div><a href="#">April 07, 2020</a></div>
+              <div><a href="#">Admin</a></div>
+              <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+            </div>
+            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry align-self-stretch">
+          <a href="blog-single.html" class="block-20 rounded" style="background-image: url('../../../assets/images/gallery-3.jpg');">
+          </a>
+          <div class="text p-4">
+            <div class="meta mb-2">
+              <div><a href="#">April 07, 2020</a></div>
+              <div><a href="#">Admin</a></div>
+              <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+            </div>
+            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</section> 

@@ -5,7 +5,7 @@ import { NgForm } from '@angular/forms';;
 @Component({
   selector: 'app-experiencias',
   templateUrl: './experiencias.component.html',
-  styleUrls: ['./experiencias.component.css']
+  styleUrls: ['../../app.component.css', '../../app.component.animate.css']
 })
 export class ExperienciasComponent implements OnInit {
 
