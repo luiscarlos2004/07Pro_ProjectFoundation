@@ -22,7 +22,7 @@
         <p class="form-floating mb-2 mt-4">Ingresa la foto de tu mascota</p>
 
         <div class="form-floating mb-2 mt-4">
-          <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="Adjunta la foto de tu mascota" aria-label="Upload" name="foto" [(ngModel)]="servicio.datosInputExperiencias.foto">
+          <input type="text" class="form-control" id="inputGroupFile04" aria-describedby="Adjunta la foto de tu mascota" aria-label="Upload" name="foto" [(ngModel)]="servicio.datosInputExperiencias.foto">
         </div>
 
 
@@ -37,6 +37,7 @@
     </div>
   </main>
 
+  <!--
   <table border="1" align="center" style="width: 450px;" class=" p-5 shadow p-3 mb-5 bg-body rounded">
     <thead>
       <th>Nombre del Usuario</th>
@@ -54,6 +55,41 @@
     </tbody>
 
   </table>
+-->
+
+
+  <section class="ftco-section bg-light">
+    <div class="container">
+      <div class="row justify-content-center pb-5 mb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <h2>Latest news from our blog</h2>
+        </div>
+      </div>
+      <div class="row d-flex">
+  
+        <div class="col-md-4 d-flex" *ngFor="let datos of servicio.experiencias">
+          <div class="blog-entry align-self-stretch" >
+            <a href="blog-single.html" class="block-20 rounded"
+              style="background-image: url('{{datos.foto}}');">
+            </a>
+            <div class="text p-4">
+              <div class="meta mb-2">
+                <div><a href="#" style="color: #42E6A4;">April 07, 2020</a></div>
+                <br>
+                <div><a href="#">MASCOTA:{{datos.mascota}}</a></div>
+                <br>
+                <div><a href="#">USUARIO: {{datos.nombre}}</a></div>
+                <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+              </div>
+              <h3 class="heading"><a href="#">{{datos.comentario}}</a></h3>
+            </div>
+          </div>
+        </div>
+        
+    
+      </div>
+    </div>
+  </section>
 
 </body>
 
