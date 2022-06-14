@@ -16,7 +16,7 @@ export class ContactoComponent implements OnInit {
   }
 
 
-  listadoContactos(){
+  listadoContactos() {
     this.servicio.obtenerContactos().subscribe({
       next: (res) => {
         console.log('------ Obteniendo contactos - READ ------');
@@ -26,7 +26,7 @@ export class ContactoComponent implements OnInit {
     })
   }
 
-  agregarContacto(form: NgForm){
+  agregarContacto(form: NgForm) {
     console.log(form.value);
     this.servicio.createContactos(form.value).subscribe(
       (res) => {
@@ -37,5 +37,24 @@ export class ContactoComponent implements OnInit {
       (err) => console.log(err)
     )
   }
+
+  eliminarContacto(id: any) {
+    let respuesta = confirm('Desea eliminar el Contacto?' + id);
+    console.log(respuesta); //true o false
+    if (respuesta == true) {
+      //Hizo click en Aceptar
+      this.servicio.deleteContactos(id).subscribe(
+        (res) => {
+          console.log('------ Eliminando un nuevo registro - DELETE ------');
+          this.listadoContactos();
+        },
+        (err) => console.log(err)
+      );
+    }
+  }
+
+
+
+
 
 }

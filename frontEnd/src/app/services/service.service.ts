@@ -100,4 +100,25 @@ export class ServiceService {
   return peticion;
 }
 
+
+ deleteContactos(id: string) {
+  let peticion = this.http.delete(this.URL + '/api/users/eliminar_contacto/' + id);
+  return peticion;
+ }
+ 
+
+ deleteDonaciones(id: string) {
+  let peticion = this.http.delete(this.URL + '/api/users/eliminar_donaciones/' + id);
+  return peticion;
+ }
+
+
+ actualizarDonaciones(datos: Donaciones_modelo) {
+  let peticion = this.http.put(this.URL + '/api/users/actualizar_donacion/' + datos._id,
+ datos);
+  return peticion;
+ }
+ 
+
+
 }

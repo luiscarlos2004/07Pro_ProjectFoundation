@@ -60,4 +60,25 @@ router.get("/get_experiencia", async function (req, res) {
  });
 
 
+//Para eliminar registro
+router.delete("/eliminar_contacto/:id", async function(req, res){
+   var contacto_id = req.params.id;
+   await datosContactos.findByIdAndRemove(contacto_id)
+   res.send({respuesta: "Registro eliminado"});
+ });
 
+ router.delete("/eliminar_donaciones/:id", async function(req, res){
+   var donaciones_id = req.params.id;
+   await datosDonaciones.findByIdAndRemove(donaciones_id)
+   res.send({respuesta: "Registro eliminado"});
+});
+
+//Para actualizar Donaciones
+router.put("/actualizar_donacion/:id", async function (req, res) {
+   var iddonaciones = req.params.id;
+   console.log(req.body);
+   var donacion = await datosDonaciones.updateOne({ _id: iddonaciones }, req.body);
+   res.send({respuesta: "Actualizando donacion"});
+   console.log(donacion);
+   
+});

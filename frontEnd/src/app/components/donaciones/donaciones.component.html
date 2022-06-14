@@ -68,6 +68,9 @@
 
                 <button id="button" class="mt-3 w-75 border border-none p-2 text-secondary rounded-3"
                     style="background-color: #42E6A4;" type="submit">Enviar</button>
+                <input type="hidden" name="_id" [(ngModel)]="servicio.datosInputDonaciones._id">
+                <button type="button" (click)="limpiarFormulario(formularioDonaciones)" class="mt-3 w-75 border border-none p-2 text-secondary rounded-3"
+                style="background-color: #42E6A4;">Limpiar Formulario</button>
                 <p class="mt-5 mb-2 text-black">&copy; Fundacion Caninos</p>
             </form>
         </div>
@@ -92,8 +95,8 @@
                 <td>{{ d.valor }}</td>
                 <td>{{ d.cuotas }}</td>
                 <td>{{ d.banco }}</td>
-                <td><button>Eliminar</button></td>
-                <td><button>Actualizar</button></td>
+                <td><button  (click)="eliminarDonaciones(d._id)">Eliminar</button></td>
+                <td><button  (click)="actualizarDonaciones(d)">Actualizar</button></td>
             </tr>
         </tbody>
     </table>

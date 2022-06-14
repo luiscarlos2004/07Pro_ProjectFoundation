@@ -73,7 +73,7 @@
                 <td>{{ v.correo }}</td>
                 <td>{{ v.asunto }}</td>
                 <td>{{ v.descripcion }}</td>
-                <td><button>Eliminar</button></td>
+                <td><button (click)="eliminarContacto(v._id)">Eliminar</button></td>
             </tr>
         </tbody>
     </table>
