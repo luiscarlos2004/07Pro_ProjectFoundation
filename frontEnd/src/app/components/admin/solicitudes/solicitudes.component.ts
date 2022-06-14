@@ -25,8 +25,11 @@ export class SolicitudesComponent implements OnInit {
       error:(err)=>{console.log(err)}
     })
   }
-  // denegarsolicitud(id:string){
-    
-  // }
+  denegarsolici(id:any){
+    this.servicioanimales.denegarsolicitud(id).subscribe({
+      next:(res)=>{console.log(res),this.obtenersolicitudes()},
+      error:(err)=>{console.log(err)}
+    })
+  }
 
 }

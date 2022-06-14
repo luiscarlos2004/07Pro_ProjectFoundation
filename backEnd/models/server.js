@@ -5,7 +5,7 @@ const user = require('../models/users');
 class Server{
     constructor(){
         this.app = express();
-        this.userPath = '/api/users'
+        this.userPath = '/api/users';
         this.port = process.env.PORT;
         this.conectarDb();
         this.middlewares();//se llama primero antes de la rutas para que no salga error

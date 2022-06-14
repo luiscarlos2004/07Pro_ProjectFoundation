@@ -2,6 +2,7 @@
 <tr *ngFor="let soli of servicioanimales.solici">
     <li>{{soli.nombre}}</li>
     <button (click)="aceptarsolicitud(soli._id)">Aceptar</button>
-    <!-- <button (click)="denegarsolicitud(soli._id)">Denegar</button> -->
+    <button (click)="denegarsolici(soli._id)">Denegar</button>
 </tr>
+
 

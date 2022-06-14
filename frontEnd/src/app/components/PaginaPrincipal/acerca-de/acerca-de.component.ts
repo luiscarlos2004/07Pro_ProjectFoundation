@@ -3,8 +3,8 @@ import { ServiceService } from '../../../services/service.service';
 
 @Component({
   selector: 'app-acerca-de',
-  templateUrl: './acerca-de.component.html',
-  styleUrls: ['../../app.component.css']
+  templateUrl: './acerca-de.component.html'
+  // styleUrls: ['../../app.component.css']
 })
 export class AcercaDeComponent implements OnInit {
 

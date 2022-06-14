@@ -1,7 +1,8 @@
 const users = require('../models/users');
 const registroUser = require('../models/registrosUser');
 const animals = require('../models/registrarAnimales');
-const solicitudesmo = require('../models/solicitudadopcion')
+const solicitudesmo = require('../models/solicitudadopcion');
+const mensajes = require('../models/mensaje');
 const postUsers = async(req,res)=>{
     let {correo,password} = req.body;
     let resp = await users.findOne({$and:[{correo},{password}]});
@@ -89,7 +90,7 @@ const solicitudes = async(req,res)=>{
     let {nombre:nombrep,cedula,celular,direccion,ocupacion,ingresos,edad:edadp,sexo} = await registroUser.findById(iduser);
     let infosolicitud = {
         nombre,edad,raza,imagen,tamano,vacunas,
-        nombrep,cedula,celular,direccion,ocupacion,ingresos,edadp,sexo,idanimal
+        nombrep,cedula,celular,direccion,ocupacion,ingresos,edadp,sexo,idanimal,idpersona
     }
     // console.log(infoAnimal)
     // console.log(infopersona)
@@ -105,7 +106,7 @@ const solicitudes = async(req,res)=>{
     
 }
 const consultarsolicitudes = async (req,res)=>{
-    let infosolicirudes = await solicitudesmo.find();
+    let infosolicirudes = await solicitudesmo.find({solicitudadopcion:"PROCESO"});
     res.send(infosolicirudes)
 }
 const solicitudaceptada = async(req,res)=>{
@@ -114,8 +115,9 @@ const solicitudaceptada = async(req,res)=>{
     let nom = nombre
     await animals.findByIdAndRemove(idanimal);
     // await solicitudesmo.find(nombre).remove();
-    await solicitudesmo.findByIdAndRemove(ide);
-    let otras = await solicitudesmo.find({nombre:nom}).remove();
+    // let otras = await solicitudesmo.find({idanimal:idanimal});
+    await solicitudesmo.updateMany({idanimal:idanimal},{solicitudadopcion:"DENEGADAS"})
+    await solicitudesmo.findByIdAndUpdate({_id:ide},{solicitudadopcion:"ACEPTADA"});
     res.send(true)
 }
 const buscaranimall = async(req,res)=>{
@@ -127,6 +129,18 @@ const buscaranimall = async(req,res)=>{
     }
     
 }
+const negarsolicitud = async(req,res)=>{
+    let idsolicitud = req.params.iddene;
+    // console.log(idpersonaa)
+    await solicitudesmo.findByIdAndUpdate({_id:idsolicitud},{solicitudadopcion:"DENEGADAS"});
+    res.send(true)
+}
+const buscarsolicitudes = async(req,res)=>{
+    let ids = req.params.idbuscasol
+    let soli = await solicitudesmo.find({idpersona:ids})
+    res.send(soli)
+}
+
 module.exports = {
     postUsers,
     consultarEstado,
@@ -141,5 +155,7 @@ module.exports = {
     solicitudes,
     consultarsolicitudes,
     solicitudaceptada,
-    buscaranimall
+    buscaranimall,
+    negarsolicitud,
+    buscarsolicitudes
 }

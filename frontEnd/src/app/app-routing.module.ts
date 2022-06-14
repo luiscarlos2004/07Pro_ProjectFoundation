@@ -1,7 +1,7 @@
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './components/shared/error-page/error-page.component';
-
+import { CargaprincipalComponent } from './components/cargaprincipal/cargaprincipal.component';
 import { AuthGuard } from './components/auth/auth/guards/auth.guard';
 const routes: Routes = [
   {
@@ -16,7 +16,11 @@ const routes: Routes = [
   {
     path:'admin',
     loadChildren: () => import('./components/admin/admin-module.module').then(m => m.AdminModuleModule),
-    // canLoad: [ AuthGuard ]
+    canLoad: [ AuthGuard ]
+  },
+  {
+    path:'cargaprincipal',
+    component:CargaprincipalComponent
   },
   {
     path:'404',
@@ -24,7 +28,7 @@ const routes: Routes = [
   },
   {
     path:'**',
-    redirectTo: 'auth'
+    redirectTo: 'cargaprincipal'
   }
 ];
 

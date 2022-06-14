@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  styleUrls: ['./inicio.component.css','../../../../../fontAwesome/css/all.min.css']
 })
 export class InicioComponent implements OnInit {
   //!decir siempre un valor
@@ -16,7 +16,7 @@ export class InicioComponent implements OnInit {
   
   constructor(private ServiceService:ServiceService, private router:Router) { }
   cerrar(){
-    this.router.navigate(['auth/login']);
+    this.router.navigate(['/cargaprincipal']);
   }
   ngOnInit(): void {
   }

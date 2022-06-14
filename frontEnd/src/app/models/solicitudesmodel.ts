@@ -22,5 +22,7 @@ export type Solicitudes = {
     sexo:string,
     imagenperfil:string,
     pasatiempo:string,
-    idanimal?:string
+    idanimal?:string,
+    idpersona?:string,
+    solicitudadopcion?:string
 }

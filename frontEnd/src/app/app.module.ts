@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ErrorPageComponent } from './components/shared/error-page/error-page.component';
+import { CargaprincipalComponent } from './components/cargaprincipal/cargaprincipal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    CargaprincipalComponent
   ],
   imports: [
     BrowserModule,

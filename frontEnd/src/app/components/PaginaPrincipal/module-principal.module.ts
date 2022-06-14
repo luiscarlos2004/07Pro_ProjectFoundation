@@ -13,6 +13,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { OpinionesComponent } from './opiniones/opiniones.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
 import { FooterComponent } from './footer/footer.component';
+import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FooterComponent } from './footer/footer.component';
     DonacionesFormComponent,
     OpinionesComponent,
     Inicio2Component,
-    FooterComponent
+    FooterComponent,
+    SeguimientoComponent
   ],
   imports: [
     CommonModule,

@@ -36,7 +36,11 @@ let solicitud = Schema({
     nombrep:String,
     edadp:Number,
     idanimal:String,
-    // idpersona:String
+    idpersona:String,
+    solicitudadopcion:{
+        type:String,
+        default:'PROCESO'
+    }
 })
 
 module.exports = model('solicitude',solicitud);

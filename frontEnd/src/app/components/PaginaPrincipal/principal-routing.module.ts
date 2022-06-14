@@ -11,7 +11,7 @@ import { DonacionesFormComponent } from './donaciones-form/donaciones-form.compo
 import { InicioComponent } from './inicio/inicio.component';
 import { OpinionesComponent } from './opiniones/opiniones.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
-
+import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 const rutas:Routes = [
   {
     path:'',
@@ -56,6 +56,10 @@ const rutas:Routes = [
       {
         path:'opiniones',
         component:OpinionesComponent
+      },
+      {
+        path:'seguimiento',
+        component:SeguimientoComponent
       }
     ]
   }

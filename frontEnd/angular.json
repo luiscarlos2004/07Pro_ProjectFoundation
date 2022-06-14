@@ -97,7 +97,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_module/bootstrap/dist/css/bootstrap.min.css"
+              "node_module/bootstrap/dist/css/bootstrap.min.css",
+              "fontAwesome/css/all.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

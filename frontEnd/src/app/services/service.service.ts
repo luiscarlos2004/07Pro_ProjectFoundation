@@ -7,6 +7,7 @@ import { RegistrarAnimal } from '../models/registrarAnimal';
 import { Adop } from '../models/adoptame';
 import { Solicitudes } from '../models/solicitudesmodel';
 import { Buscar } from '../models/buscar';
+import { Archivos } from '../models/archivo';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,9 +20,14 @@ export class ServiceService {
     return {...this._auth!}
   }
   user:Users[]=[];
+  archi:Archivos[]=[];
   animales:any=[];
   solici:Solicitudes[]=[];
+  procesoSoli:Solicitudes[]=[];
   busca:any=[];
+  archiv:Archivos = {
+    archivo:''
+  }
   buscar:Buscar = {
     busqueda:'',
     nombre:'',
@@ -125,6 +131,19 @@ export class ServiceService {
   }
   busquedaanimal(datos:Buscar){
     let peticion = this.http.post(this.URL + '/api/users/buscan/buscaranimal',datos)
+    return peticion
+  }
+  denegarsolicitud(id:any){
+    let peticion = this.http.get(this.URL + '/api/users/solicitude/denegarsolicitud/'+ id)
+    return peticion
+  }
+  seguimientoSolici(id:any){
+    console.log(id)
+    let peticion = this.http.get<Solicitudes[]>(this.URL + '/api/users/solicitudes/seguimientosoli/' + id)
+    return peticion
+  }
+  informaciondar(dato:Archivos){
+    let peticion = this.http.post(this.URL + '/api/users/cargar/cargararchivos',dato)
     return peticion
   }
 }
