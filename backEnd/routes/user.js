@@ -5,6 +5,8 @@ const {postUsers,consultarEstado,resgistrarUsuarios,cargarUsuarios,cargarUsuario
 // const {cargarArchivos} = require('../controllers/uploads');
 const {validarCampos} = require('../middlewares/validar-campos');
 const {correoExiste,passwordExiste} = require('../helpers/db-validatots');
+const bodyParser = require('body-parser');
+
 
 router.post('/',[
     check('correo').not().isEmpty(),
@@ -39,7 +41,7 @@ router.post('/users/buscaruser',buscarUsers);
 router.put('/userspage/actualizar',actualizarUser)
 
 
-
+router.use(bodyParser.json());
 
 var Mascotas_darAdopcion = require('../models/darAdopcion');
 
