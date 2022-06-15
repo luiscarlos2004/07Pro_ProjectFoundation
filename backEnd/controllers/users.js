@@ -6,7 +6,7 @@ const mensajes = require('../models/mensaje');
 const postUsers = async(req,res)=>{
     let {correo,password} = req.body;
     let resp = await users.findOne({$and:[{correo},{password}]});
-   
+    
     if(resp){
         await users.updateOne({_id:resp._id},{estado:true})
         res.send(resp);
@@ -179,13 +179,14 @@ const buscarUsers = async(req,res)=>{
 }
 const actualizarUser = async(req,res)=>{
     let {_id,...info} = req.body;
-    await registroUser.findByIdAndUpdate({_id:_id},info);
+    // console.log(ids)
+    let datos = await registroUser.findById({_id:_id});
+    console.log(datos)
     res.send(true)
 }
 const mostrarinfouser = async(req,res)=>{
     let id = req.params.ids
-    // console.log(id)
-    await registroUser.findById(id)
+    await registroUser.findById({_id:id})
     res.send(true)
 }
 
