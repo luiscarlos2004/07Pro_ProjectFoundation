@@ -37,4 +37,30 @@ router.delete('/users/eliminaruser/:idue',eliminarUsers );
 router.put('/users/editarol',editarol);
 router.post('/users/buscaruser',buscarUsers);
 router.put('/userspage/actualizar',actualizarUser)
+
+
+
+
+var Mascotas_darAdopcion = require('../models/darAdopcion');
+
+
+router.get('/darAdopcion', async function(req , res){
+let buscar = await Mascotas_darAdopcion.find()
+res.send(buscar);
+console.log(buscar)
+
+});
+
+
+router.post('/crear_darAdopcion', async function(req , res){
+let mascota = req.body
+var agregar = new Mascotas_darAdopcion(mascota);
+await agregar.save();
+res.send({respuesta: "creando una nueva mascota para dar en adopcion"})
+
+
+
+
+})
+
 module.exports = router;

@@ -18,35 +18,59 @@
                         <div class="col-md-7">
                             <div class="contact-wrap w-100 p-md-5 p-4">
                                 
-                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                <form  #formularioDaradopcion="ngForm"  (ngSubmit)="agregarDaradopcion(formularioDaradopcion)" id="contactForm" name="contactForm" class="contactForm">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="label" for="name">Full Name</label>
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                                <label class="label" for="name">Nombre</label>
+                                                <input type="text" class="form-control" name="nombre" id="name" placeholder="nombre" [(ngModel)]="Servicio.darAdopcion2.nombre">
                                             </div>
                                         </div>
                                         <div class="col-md-6"> 
                                             <div class="form-group">
-                                                <label class="label" for="email">Email Address</label>
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                                <label class="label" for="email">Telefono de contacto</label>
+                                                <input type="email" class="form-control" name="telefono" id="email" placeholder="Telefono de contacto" [(ngModel)]="Servicio.darAdopcion2.telefono">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6"> 
+                                            <div class="form-group">
+                                                <label class="label" for="email">Email contacto</label>
+                                                <input type="email" class="form-control" name="email" id="email" placeholder="Email de contacto" [(ngModel)]="Servicio.darAdopcion2.email">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="label" for="subject">Subject</label>
-                                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                                                <label class="label" for="subject">Nombre Mascota</label>
+                                                <input type="text" class="form-control" name="mascota" id="subject" placeholder="Nombre de la Mascota" [(ngModel)]="Servicio.darAdopcion2.mascota">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="label" for="#">Message</label>
-                                                <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                                                <label class="label" for="subject">Raza de la Mascota</label>
+                                                <input type="text" class="form-control" name="raza" id="subject" placeholder="Raza de la Mascota" [(ngModel)]="Servicio.darAdopcion2.raza" >
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="submit" value="Send Message" class="btn btn-primary">
+                                                <label class="label" for="subject">Edad de la Mascota</label>
+                                                <input type="text" class="form-control" name="edad" id="edad" placeholder="Edad de la Mascota" [(ngModel)]="Servicio.darAdopcion2.edad">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="label" for="subject">Imagen de la Mascota</label>
+                                                <input type="text" class="form-control" name="imagen" id="subject" placeholder="Imagen de la mascota" [(ngModel)]="Servicio.darAdopcion2.imagen">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="label" for="#">Descripcion o motivo por el cual se da en adopcion</label>
+                                                <textarea name="motivo" class="form-control" id="message" cols="30" rows="4" placeholder="Message" [(ngModel)]="Servicio.darAdopcion2.motivo"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
                                                 <div class="submitting"></div>
                                             </div>
                                         </div>
@@ -64,4 +88,33 @@
         </div>
     </div>
 </section>
+
+
+<table border="1">
+    <thead>
+    <th>Titulo</th>
+    <th>Imagen</th>
+    <th>URL</th>
+    <th>Origen</th>
+    <th>Estado</th>
+    <th>Categoria</th>
+    <th>Fecha</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let v of Servicio.darAdopcion">
+    <td>{{ v.nombre }}</td>
+    <td>{{ v.telefono}}</td>
+    <td>{{ v.email}}</td>
+    <td>{{ v.edad }}</td>
+    <td>{{ v.raza }}</td>
+    <td>{{ v.imagen }}</td>
+    <td>{{ v.motivo }}</td>
+    </tr>
+    </tbody>
+   </table>
+   
+
+
+
+
 <app-footer></app-footer>

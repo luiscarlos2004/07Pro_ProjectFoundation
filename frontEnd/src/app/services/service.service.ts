@@ -8,6 +8,10 @@ import { Adop } from '../models/adoptame';
 import { Solicitudes } from '../models/solicitudesmodel';
 import { Buscar } from '../models/buscar';
 import { Archivos } from '../models/archivo';
+import {Daradopcion_modelo } from '../models/darAdopcion'
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +30,10 @@ export class ServiceService {
   procesoSoli:Solicitudes[]=[];
   busca:any=[];
   buscarUser:any=[];
+  darAdopcion: Daradopcion_modelo[] = [];
+
+
+
   archiv:Archivos = {
     archivo:''
   }
@@ -69,6 +77,18 @@ export class ServiceService {
     tamano:'',
     vacunas:'',
   }
+
+  darAdopcion2: Daradopcion_modelo = {
+    nombre: '',
+    email:'',
+    telefono:'',
+    mascota:'',
+    raza: '',
+    imagen: '',
+    edad: '',
+    motivo: '',
+  }
+
   
   postUsers(datos:Users){
     let peticion = this.http.post(this.URL + '/api/users', datos)
@@ -165,4 +185,18 @@ export class ServiceService {
     let peticion = this.http.put(this.URL + '/api/users/userspage/actualizar',datos);
     return peticion
   }
+
+  obtenerDarenAdpcion(){
+    let peticion = this.http.get<Daradopcion_modelo[]>(this.URL + '/api/users/darAdopcion');
+   return peticion  
+
+  }
+
+  crear_DarAdopcion(datos: Daradopcion_modelo) {
+  
+    let peticion = this.http.post(this.URL + '/api/users/crear_darAdopcion', datos);
+    return peticion;
+   }
+   
+
 }
