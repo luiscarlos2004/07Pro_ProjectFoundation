@@ -13,6 +13,7 @@
                             <div class="contact-wrap w-100 p-md-5 p-4">
                                 
                                 <form class="contactForm" #formactualizaruser="ngForm" (ngSubmit)="actualizaruser(formactualizaruser)">
+                                    <input type="hidden" name="_id" placeholder="id" [(ngModel)]="servicio.auth._id">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">

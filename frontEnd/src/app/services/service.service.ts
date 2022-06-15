@@ -26,6 +26,7 @@ export class ServiceService {
   procesoSoli:Solicitudes[]=[];
   busca:any=[];
   buscarUser:any=[];
+  infoactu:Register[] = [];
   archiv:Archivos = {
     archivo:''
   }
@@ -163,6 +164,11 @@ export class ServiceService {
   }
   actualizarusers(datos:Register){
     let peticion = this.http.put(this.URL + '/api/users/userspage/actualizar',datos);
+    return peticion
+  }
+  traerdatos(){
+    let id = this.auth._id
+    let peticion = this.http.get<Register[]>(this.URL + '/api/users/userspage/traerinfoactu/'+id)
     return peticion
   }
 }

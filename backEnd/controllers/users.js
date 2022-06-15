@@ -178,7 +178,15 @@ const buscarUsers = async(req,res)=>{
     }
 }
 const actualizarUser = async(req,res)=>{
-    console.log(req.body)
+    let {_id,...info} = req.body;
+    await registroUser.findByIdAndUpdate({_id:_id},info);
+    res.send(true)
+}
+const mostrarinfouser = async(req,res)=>{
+    let id = req.params.ids
+    // console.log(id)
+    await registroUser.findById(id)
+    res.send(true)
 }
 
 module.exports = {
@@ -201,5 +209,6 @@ module.exports = {
     eliminarUsers,
     editarol,
     buscarUsers,
-    actualizarUser
+    actualizarUser,
+    mostrarinfouser
 }

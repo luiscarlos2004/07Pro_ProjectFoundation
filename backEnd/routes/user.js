@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
 const { check } = require('express-validator');
-const {postUsers,consultarEstado,resgistrarUsuarios,cargarUsuarios,cargarUsuariosdos,ingresarAnimal,mostrarAnimales,eliminaranimal,editaranimal,sacaranimalfront,solicitudes,consultarsolicitudes,solicitudaceptada,buscaranimall,negarsolicitud,buscarsolicitudes,eliminarUsers,editarol,buscarUsers,actualizarUser} = require('../controllers/users');
+const {postUsers,consultarEstado,resgistrarUsuarios,cargarUsuarios,cargarUsuariosdos,ingresarAnimal,mostrarAnimales,eliminaranimal,editaranimal,sacaranimalfront,solicitudes,consultarsolicitudes,solicitudaceptada,buscaranimall,negarsolicitud,buscarsolicitudes,eliminarUsers,editarol,buscarUsers,actualizarUser,mostrarinfouser} = require('../controllers/users');
 // const {cargarArchivos} = require('../controllers/uploads');
 const {validarCampos} = require('../middlewares/validar-campos');
 const {correoExiste,passwordExiste} = require('../helpers/db-validatots');
@@ -37,4 +37,5 @@ router.delete('/users/eliminaruser/:idue',eliminarUsers );
 router.put('/users/editarol',editarol);
 router.post('/users/buscaruser',buscarUsers);
 router.put('/userspage/actualizar',actualizarUser)
+router.get('/userspage/traerinfoactu/:ids', mostrarinfouser)
 module.exports = router;

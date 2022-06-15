@@ -12,10 +12,20 @@ export class FormupdateusersComponent implements OnInit {
   constructor(public servicio:ServiceService) { }
 
   ngOnInit(): void {
+    this.traerdatos();
+  }
+  
+  traerdatos(){
+    this.servicio.traerdatos().subscribe({
+      next:(res)=>{this.servicio.infoactu = res},
+      error:(err)=>{console.log(err)}
+    })
   }
   actualizaruser(datos:NgForm){
     this.servicio.actualizarusers(datos.value).subscribe({
-      next:(res)=>{console.log(res)},
+      next:(res)=>{
+        console.log(res);
+      },
       error:(err)=>{console.log(err)}
     })
   }
