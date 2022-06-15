@@ -6,8 +6,9 @@ const mensajes = require('../models/mensaje');
 const postUsers = async(req,res)=>{
     let {correo,password} = req.body;
     let resp = await users.findOne({$and:[{correo},{password}]});
-    await users.updateOne({_id:resp._id},{estado:true})
+   
     if(resp){
+        await users.updateOne({_id:resp._id},{estado:true})
         res.send(resp);
     }else{
         res.send(false);
@@ -48,8 +49,8 @@ const cargarUsuariosdos = async(req,res)=>{
     let numeros = req.params.numero;
     const desde = numeros;
     let hasta = 5;
-    const usuarios = await users.find().skip(Number(desde)).limit(Number(hasta));
-    console.log(usuarios)
+    const usuarios = await registroUser.find().skip(Number(desde)).limit(Number(hasta));
+    // console.log(usuarios)
     res.send(usuarios)
 }
 const ingresarAnimal = async(req,res)=>{
@@ -126,6 +127,9 @@ const buscaranimall = async(req,res)=>{
         let encontrado = await animals.find({nombre:{$in:[new RegExp(`${busca}`,'i')]}})
         console.log(encontrado);
         res.send(encontrado)
+    }else{
+        let animales = await animals.find();
+        res.send(animales)
     }
     
 }
@@ -139,6 +143,42 @@ const buscarsolicitudes = async(req,res)=>{
     let ids = req.params.idbuscasol
     let soli = await solicitudesmo.find({idpersona:ids})
     res.send(soli)
+}
+const eliminarUsers = async(req,res)=>{
+    let idu = req.params.idue;
+    console.log(idu)
+    await registroUser.findByIdAndRemove(idu)
+    await users.updateOne({iduser:idu},{estado:false})
+    res.send(true)
+}
+const editarol = async(req,res)=>{
+    const {_id,rol} = req.body
+    // console.log(_id,rol)
+    if(rol == 'user'){
+        await users.updateOne({iduser:_id},{rol:'USER'})
+        res.send(true)
+    }else if(rol == 'admin'){
+        await users.updateOne({iduser:_id},{rol:'ADMIN'})
+        res.send(true)
+    }
+    // res.send(true)
+    
+    // console.log(req.params.idp)
+}
+const buscarUsers = async(req,res)=>{
+    let busca = req.body.busqueda;
+    // console.log(req.body)
+    if(busca.length > 0){
+        let encontrado = await registroUser.find({nombre:{$in:[new RegExp(`${busca}`,'i')]}})
+        console.log(encontrado);
+        res.send(encontrado)
+    }else{
+        let animales = await registroUser.find();
+        res.send(animales)
+    }
+}
+const actualizarUser = async(req,res)=>{
+    console.log(req.body)
 }
 
 module.exports = {
@@ -157,5 +197,9 @@ module.exports = {
     solicitudaceptada,
     buscaranimall,
     negarsolicitud,
-    buscarsolicitudes
+    buscarsolicitudes,
+    eliminarUsers,
+    editarol,
+    buscarUsers,
+    actualizarUser
 }

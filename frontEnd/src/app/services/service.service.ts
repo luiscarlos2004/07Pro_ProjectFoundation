@@ -19,12 +19,13 @@ export class ServiceService {
   get auth():Users{
     return {...this._auth!}
   }
-  user:Users[]=[];
+  user:Register[]=[];
   archi:Archivos[]=[];
   animales:any=[];
   solici:Solicitudes[]=[];
   procesoSoli:Solicitudes[]=[];
   busca:any=[];
+  buscarUser:any=[];
   archiv:Archivos = {
     archivo:''
   }
@@ -41,6 +42,7 @@ export class ServiceService {
     correo : '',
     password : ''
   }
+  // userss:Users[]=[];
   usersRegis:Register = {
     nombre:'',
     cedula:0,
@@ -58,6 +60,7 @@ export class ServiceService {
     pasatiempo:''
     // fecha:''
   }
+  
   animalesRegistra:RegistrarAnimal = {
     nombre:'',
     edad:0,
@@ -89,7 +92,7 @@ export class ServiceService {
     return peticion;
   }
   paginador(numero:any){
-    let peticion = this.http.get<Users[]>(this.URL + '/api/users/paginador/' + numero);
+    let peticion = this.http.get<Register[]>(this.URL + '/api/users/paginador/' + numero);
     return peticion;
   }
   agregarAnimaldos(datos:RegistrarAnimal){
@@ -144,6 +147,22 @@ export class ServiceService {
   }
   informaciondar(dato:Archivos){
     let peticion = this.http.post(this.URL + '/api/users/cargar/cargararchivos',dato)
+    return peticion
+  }
+  eliminarpersona(id:any){
+    let peticion = this.http.delete(this.URL + '/api/users/users/eliminaruser/' + id)
+    return peticion
+  }
+  editarol(datos:any){
+    let peticion = this.http.put(this.URL + '/api/users/users/editarol',datos)
+    return peticion
+  }
+  buscarusers(datos:Register){
+    let peticion = this.http.post(this.URL + '/api/users/users/buscaruser',datos)
+    return peticion
+  }
+  actualizarusers(datos:Register){
+    let peticion = this.http.put(this.URL + '/api/users/userspage/actualizar',datos);
     return peticion
   }
 }

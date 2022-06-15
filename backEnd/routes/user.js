@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
 const { check } = require('express-validator');
-const {postUsers,consultarEstado,resgistrarUsuarios,cargarUsuarios,cargarUsuariosdos,ingresarAnimal,mostrarAnimales,eliminaranimal,editaranimal,sacaranimalfront,solicitudes,consultarsolicitudes,solicitudaceptada,buscaranimall,negarsolicitud,buscarsolicitudes} = require('../controllers/users');
+const {postUsers,consultarEstado,resgistrarUsuarios,cargarUsuarios,cargarUsuariosdos,ingresarAnimal,mostrarAnimales,eliminaranimal,editaranimal,sacaranimalfront,solicitudes,consultarsolicitudes,solicitudaceptada,buscaranimall,negarsolicitud,buscarsolicitudes,eliminarUsers,editarol,buscarUsers,actualizarUser} = require('../controllers/users');
 // const {cargarArchivos} = require('../controllers/uploads');
 const {validarCampos} = require('../middlewares/validar-campos');
 const {correoExiste,passwordExiste} = require('../helpers/db-validatots');
@@ -33,4 +33,8 @@ router.post('/buscan/buscaranimal',buscaranimall);
 router.get('/solicitude/denegarsolicitud/:iddene',negarsolicitud);
 router.get('/solicitudes/seguimientosoli/:idbuscasol',buscarsolicitudes);
 // router.post('/cargar/cargararchivos',cargarArchivos);
+router.delete('/users/eliminaruser/:idue',eliminarUsers );
+router.put('/users/editarol',editarol);
+router.post('/users/buscaruser',buscarUsers);
+router.put('/userspage/actualizar',actualizarUser)
 module.exports = router;

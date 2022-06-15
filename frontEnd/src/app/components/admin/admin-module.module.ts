@@ -12,7 +12,7 @@ import { AgregarMascotasComponent } from './agregar-mascotas/agregar-mascotas.co
 import { AdminRoutingModule } from './admin-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MascotasComponent } from './mascotas/mascotas.component';
-
+import { BalancesComponent } from './balances/balances.component';
 @NgModule({
   declarations: [
     DashbordComponent,
@@ -22,6 +22,7 @@ import { MascotasComponent } from './mascotas/mascotas.component';
     SolicitudesDarAdopcionComponent,
     AgregarMascotasComponent,
     MascotasComponent,
+    BalancesComponent
   ],
   imports: [
     CommonModule,

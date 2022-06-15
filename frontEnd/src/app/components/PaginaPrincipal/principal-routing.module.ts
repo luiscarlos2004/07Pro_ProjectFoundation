@@ -12,6 +12,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { OpinionesComponent } from './opiniones/opiniones.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
+import { FormupdateusersComponent } from './formupdateusers/formupdateusers.component';
 const rutas:Routes = [
   {
     path:'',
@@ -56,6 +57,10 @@ const rutas:Routes = [
       {
         path:'opiniones',
         component:OpinionesComponent
+      },
+      {
+        path:'actualizaruser',
+        component:FormupdateusersComponent
       },
       {
         path:'seguimiento',

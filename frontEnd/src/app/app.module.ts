@@ -12,6 +12,7 @@ import { ErrorPageComponent } from './components/shared/error-page/error-page.co
 import { CargaprincipalComponent } from './components/cargaprincipal/cargaprincipal.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

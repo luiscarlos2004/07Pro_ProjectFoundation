@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PrincipalRoutingModule } from './principal-routing.module';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
@@ -14,6 +15,7 @@ import { OpinionesComponent } from './opiniones/opiniones.component';
 import { Inicio2Component } from './inicio2/inicio2.component';
 import { FooterComponent } from './footer/footer.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
+import { FormupdateusersComponent } from './formupdateusers/formupdateusers.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,13 @@ import { SeguimientoComponent } from './seguimiento/seguimiento.component';
     OpinionesComponent,
     Inicio2Component,
     FooterComponent,
-    SeguimientoComponent
+    SeguimientoComponent,
+    FormupdateusersComponent
   ],
   imports: [
     CommonModule,
-    PrincipalRoutingModule
+    PrincipalRoutingModule,
+    FormsModule
   ]
 })
 export class ModulePrincipalModule { }

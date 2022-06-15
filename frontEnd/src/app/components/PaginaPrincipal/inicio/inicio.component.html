@@ -14,7 +14,7 @@
                 </div>
                 <div style="display: flex; justify-content: right; margin-left:45%">
                     <a (click)="cerrar()" class="nav-link"><span style="color: white;" class="fa-solid fa-arrow-right-from-bracket"></span></a>
-                    <a style="color: white; font-weight: 100;" class="nav-link navperfil"><span style="color: white;" class="fa-solid fa-user"></span>{{auth.correo}}</a>
+                    <a routerLink="/pagina/actualizaruser" style="color: white; font-weight: 100;" class="nav-link navperfil"><span style="color: white;" class="fa-solid fa-user"></span>{{auth.correo}}</a>
                 </div>
             </div>
             
@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-white ftco-navbar-light" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg  ftco_navbar ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand"><span class="flaticon-pawprint-1 mr-2"></span>Fundacion Caninos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -36,7 +36,7 @@
                 <li class="nav-item"><a routerLink='/pagina/inicioprincipal' class="nav-link">Inicio</a></li>
                 <li class="nav-item"><a routerLink="/pagina/adoptame" class="nav-link">Adoptame</a></li>
                 <li class="nav-item"><a routerLink="/pagina/daradopcion" class="nav-link">Dar en Adopcion</a></li>
-                <li class="nav-item"><a routerLink='/pagina/dardonacion' class="nav-link">Donaciones</a></li>
+                <li class="nav-item"><a routerLink='/pagina/donaciones' class="nav-link">Donaciones</a></li>
                 <li class="nav-item"><a routerLink='/pagina/contacto' class="nav-link">Contacto</a></li>
                 <li class="nav-item"><a routerLink='/pagina/opiniones' class="nav-link">Experiencias</a></li>
                 <li class="nav-item"><a routerLink='/pagina/seguimiento' class="nav-link">Seguimiento</a></li>

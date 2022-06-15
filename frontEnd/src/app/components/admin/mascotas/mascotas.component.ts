@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 @Component({
   selector: 'app-mascotas',
   templateUrl: './mascotas.component.html',
-  styleUrls: ['../manejo-usuarios/manejo-usuarios.component.css']
+  styleUrls: ['../manejo-usuarios/manejo-usuarios.component.css','../../../../../fontAwesome/css/all.min.css']
 })
 export class MascotasComponent implements OnInit {
   public page:number = 0

@@ -13,5 +13,7 @@ export type Register = {
     sexo:string,
     imagenperfil:string,
     pasatiempo:string,
+    _id?:string
+    // rol?:string
     // fecha?:string
 }

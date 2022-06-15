@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     
     this.servicioComponent.postUsers(datos.value).subscribe({
       next:(res)=>{
-        
+        console.log(res)
         // this.consultarEstados(res)
         
         Swal.fire({
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         let v = keys[4]
         for(let i = 0; i < v.length; i++){
           let rol = v[i]
-          if(rol=='ADMIN'){
+          if(rol == 'ADMIN'){
             this.router.navigate(['admin/']);
           }else{
             this.router.navigate(['pagina/inicioprincipal']);

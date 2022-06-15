@@ -27,6 +27,10 @@ const registrosUser = Schema({
         type:Date,
         default:new Date()
     }
+    // rol:{
+    //     type:String,
+    //     default:'USER'
+    // },
 })
 
 module.exports = model('registrosUser',registrosUser)

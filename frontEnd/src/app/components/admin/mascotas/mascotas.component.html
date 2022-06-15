@@ -1,16 +1,18 @@
 <div id="tablaUsuarios">
-    <h1>Usuarios registrados</h1>
-    <h2>Buscar</h2>
-    
+    <h1>Mascotas registradas</h1>
+    <form style="width: 30%;" class="d-flex mt-3 mb-3" #buscaran="ngForm" (ngSubmit)="buscaranimal(buscaran)">
+        <input placeholder="buscar..." class="form-control me-2" type="text" name="busqueda" [(ngModel)]="Servicio.buscar.busqueda">
+        <button class="btn btn-info text-white" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
 
     <table class="table table-dark table-striped">
         <tr class="table-primary">
             <th>Nombre</th>
-            <th>cosa</th>
-            <th>dasd</th>
-            <th>dd</th>
-            <th>dd</th>
-            <th>dd</th>
+            <th>Edad</th>
+            <th>Raza</th>
+            <th>Tamaño</th>
+            <th>vacunas</th>
+            <th>Imagen</th>
             <th>Funcionalidades</th>
         </tr>
         <tr *ngFor="let i of Servicio.busca">
@@ -18,24 +20,23 @@
         </tr>
         <tr *ngFor="let i of Servicio.animales">
             <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
+            <td>{{i.edad}}</td>
+            <td>{{i.raza}}</td>
+            <td>{{i.tamano}}</td>
+            <td>{{i.vacunas}}</td>
+            <td><img style="width: 100px;" src="{{i.imagen}}" alt=""></td>
             <button class="btneliminar" (click)="eliminarmascota(i._id)">Eliminar</button>
             <button class="btneditar" (click)="mandarEditar(i)">Editar</button>
         </tr>
     </table>
     <div class="paginador">
-        <p class="btnpaginador" (click)="prevp()">
-            << /p>
-                <p class="btnpaginador" (click)="paginador(0)">1</p>
-                <p class="btnpaginador" (click)="paginador(5)">2</p>
-                <p class="btnpaginador" (click)="paginador(10)">3</p>
-                <p class="btnpaginador" (click)="paginador(15)">4</p>
-                <p class="btnpaginador">...</p>
-                <p class="btnpaginador" (click)="nextp()">></p>
+        <p class="btnpaginador" (click)="prevp()"><</p>
+        <p class="btnpaginador" (click)="paginador(0)">1</p>
+        <p class="btnpaginador" (click)="paginador(5)">2</p>
+        <p class="btnpaginador" (click)="paginador(10)">3</p>
+        <p class="btnpaginador" (click)="paginador(15)">4</p>
+        <p class="btnpaginador">...</p>
+        <p class="btnpaginador" (click)="nextp()">></p>
     </div>
 </div>
 
@@ -80,11 +81,3 @@
         </div>
     </form>
 </main>
-
-<form #buscaran="ngForm" (ngSubmit)="buscaranimal(buscaran)">
-    <input type="text" name="busqueda" [(ngModel)]="Servicio.buscar.busqueda">
-    <button type="submit">buscar</button>
-</form>
-
-
-   

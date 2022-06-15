@@ -5,22 +5,31 @@
     <table  class="table table-dark table-striped">
         <tr  class="table-primary">
             <th>Nombre</th>
-            <th>cosa</th>
-            <th>dasd</th>
-            <th>dd</th>
-            <th>dd</th>
-            <th>dd</th>
-            <th>Funcionalidades</th>
+            <th>Cedula</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Celular</th>
+            <th>Direccion</th>
+            <!-- <th>rol</th> -->
+            
+            <!-- <th>Correo</th>
+            <th>Estado</th> -->
+            <th style="width: 11%;">Funcionalidades</th>
         </tr>
-        <tr *ngFor="let i of ServicioService.user">
-            <td>{{i.correo}}</td>
-            <td>{{i.correo}}</td>
-            <td>{{i.correo}}</td>
-            <td>{{i.correo}}</td>
-            <td>{{i.correo}}</td>
-            <td>{{i._id}}</td>
-            <button class="btneliminar">Eliminar</button>
-            <button class="btneditar">Editar</button>
+        <!-- <tr *ngFor="let i of ServicioService.buscarUser">
+            <td>{{i.nombre}}</td>
+        </tr> -->
+        <tr *ngFor="let i of ServicioService.buscarUser">
+            <td>{{i.nombre}}</td>
+            <td>{{i.cedula}}</td>
+            <td>{{i.edad}}</td>
+            <td>{{i.sexo}}</td>
+            <td>{{i.celular}}</td>
+            <td>{{i.direccion}}</td>
+            <!-- <td>{{i.rol}}</td> -->
+            <a (click)="eliminar(i._id)"><i style="font-size: 30px; text-align: center; color: red;" class="fa-solid fa-trash"></i></a>
+            <a (click)="editarpermisos(i._id)"><i style="font-size: 30px; text-align: center; color: aquamarine;" class="fa-regular fa-pen-to-square"></i></a>
+            <!-- <button class="btneditar">Editar</button> -->
         </tr>
     </table>
     <div class="paginador">
@@ -33,3 +42,16 @@
         <p class="btnpaginador" (click)="nextp()">></p>
     </div>
 </div>
+<form #formulariobuscar="ngForm" (ngSubmit)="buscarusers(formulariobuscar)">
+    <input type="text" name="busqueda" [(ngModel)]="ServicioService.buscar.busqueda">
+    <button type="submit">Buscar</button>
+</form>
+<form #formularioeditarol="ngForm" (ngSubmit)="colocarinformacion(formularioeditarol)">
+    <input type="hidden" name="_id" [(ngModel)]="ServicioService.users._id">
+    <select name="rol" [(ngModel)]="ServicioService.users.rol">
+        <option></option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select>
+    <button>Enviar</button>
+</form>

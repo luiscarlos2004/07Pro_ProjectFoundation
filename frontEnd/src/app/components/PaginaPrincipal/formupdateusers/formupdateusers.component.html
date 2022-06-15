@@ -1,0 +1,107 @@
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">Perfil</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row no-gutters">
+                        <div class="col-md-7">
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                
+                                <form class="contactForm" #formactualizaruser="ngForm" (ngSubmit)="actualizaruser(formactualizaruser)">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="nombre">Nombre</label>
+                                                <input type="text" class="form-control" name="nombre" placeholder="Name" [(ngModel)]="servicio.usersRegis.nombre">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6"> 
+                                            <div class="form-group">
+                                                <label class="label" for="cedula">Cedula</label>
+                                                <input type="number" class="form-control" name="cedula" placeholder="Cedula" [(ngModel)]="servicio.usersRegis.cedula">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="celular">Celular</label>
+                                                <input type="number" class="form-control" name="celular" placeholder="Celular" [(ngModel)]="servicio.usersRegis.celular">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="direccion">direccion</label>
+                                                <input type="text" class="form-control" name="direccion" placeholder="direccion" [(ngModel)]="servicio.usersRegis.direccion">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="ocupacion">Ocupacion</label>
+                                                <input type="text" class="form-control" name="ocupacion" placeholder="Ocupacion" [(ngModel)]="servicio.usersRegis.ocupacion">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="ingresos">Ingresos</label>
+                                                <input type="number" class="form-control" name="ingresos" placeholder="Ingresos" [(ngModel)]="servicio.usersRegis.ingresos">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="edad">Edad</label>
+                                                <input type="number" class="form-control" name="edad" placeholder="Edad" [(ngModel)]="servicio.usersRegis.edad">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="preferencias">preferencias</label>
+                                                <input type="text" class="form-control" name="preferencias" placeholder="Preferencias" [(ngModel)]="servicio.usersRegis.preferencias">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="sexo">Sexo</label>
+                                                <input type="text" class="form-control" name="sexo" placeholder="Sexo" [(ngModel)]="servicio.usersRegis.sexo">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="imagenperfil">preferencias</label>
+                                                <input type="text" class="form-control" name="imagenperfil" placeholder="Imagen perfil" [(ngModel)]="servicio.usersRegis.imagenperfil">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="pasatiempo">Pasa tiempo</label>
+                                                <input type="text" class="form-control" name="pasatiempo" placeholder="Pasatiempos" [(ngModel)]="servicio.usersRegis.pasatiempo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" value="Send Message" class="btn btn-primary">
+                                            <div class="submitting"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-5 d-flex align-items-stretch">
+                            <div class="info-wrap w-100 p-5 img" style="background-image: url(../../../../assets/img/perrito2.jpg);">
+                  </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <form class="contactForm" #formactualizaruser="ngForm" (ngSubmit)="actualizaruser(formactualizaruser)">
+    <input type="text" class="form-control" name="nombre" placeholder="Imagen perfil" [(ngModel)]="servicio.usersRegis.nombre">
+    <button type="submit">Enviar</button>
+</form> -->
+<app-footer></app-footer>

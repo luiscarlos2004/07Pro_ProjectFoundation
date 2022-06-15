@@ -1,25 +1,25 @@
 <!-- Manejado por el admin para administrar la aplicacion -->
 
-<div id="main">
-    <div id="aside">
-        <div class="titulodash">
-            <img class="img" src="https://tse1.mm.bing.net/th?id=OIP.XklayVAfQqM2N86Xfl07QwHaHa&pid=Api&P=0&w=160&h=160">
-            <p class="tidas">Caninos</p>
+
+<div class="dashbord">
+    <!-- <h1>Bienvenido admin</h1> -->
+    <div id="main">
+        <div id="aside">
+            <div class="titulodash">
+                <img class="img"
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f58b8e49-fa71-4a3f-9b51-4d7934c2c06d/d5s2y2n-a29f37cf-c013-4fc5-b536-5372d87136bf.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Y1OGI4ZTQ5LWZhNzEtNGEzZi05YjUxLTRkNzkzNGMyYzA2ZFwvZDVzMnkybi1hMjlmMzdjZi1jMDEzLTRmYzUtYjUzNi01MzcyZDg3MTM2YmYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.NL4UAiHwsUZzZw8qd3GVUBHlUL-cS-OzRlXMUpb-Emg">
+                <p class="tidas">Caninos</p>
+            </div>
+            <ul class="nav">
+                <li><a routerLink="/admin/">Dashbord</a></li>
+                <li><a routerLink="/admin/usuarios">Usuarios</a></li>
+                <li><a routerLink="/admin/agregarmascota">Agregar mascota</a></li>
+                <li><a routerLink="/admin/mascotas">Mascotas</a></li>
+                <li><a routerLink="/admin/solicitudesusers">Revisar solicitudes</a></li>
+                <li><a routerLink="/admin/balance">Balance</a></li>
+                <li><a (click)="cerrar()">Salir</a></li>
+            </ul>
         </div>
-        <ul class="nav">
-            <li><a routerLink="/admin/">Dashbord</a></li>
-            <li><a routerLink="/admin/usuarios">Usuarios</a></li>
-            <li><a routerLink="/admin/agregarmascota">Agregar mascota</a></li>
-            <li><a routerLink="/admin/mascotas">Mascotas</a></li>
-            <li><a routerLink="/admin/solicitudesusers">Revisar solicitudes</a></li>
-            <li><a (click)="cerrar()">Salir</a></li>
-        </ul>
-    </div>
-        
-    <div class="dashbord">
-        <h1>Bienvenido admin</h1>
     </div>
 </div>
 <router-outlet></router-outlet>
-
-
