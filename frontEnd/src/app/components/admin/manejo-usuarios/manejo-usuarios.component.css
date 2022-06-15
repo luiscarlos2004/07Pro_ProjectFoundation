@@ -1,4 +1,4 @@
-#tablaUsuarios{
+/* #tablaUsuarios{
     margin-left: 18%;
     margin-top: -43%;
     margin-right: 3%;
@@ -14,7 +14,7 @@
 }
 #tablaUsuarios tr td{
     border-right: 1px solid gray;
-}
+}*/
 .btneliminar,
 .btneditar{
     padding: 8px;
@@ -42,4 +42,4 @@
     padding-right: 15px;
     border-radius: 10px;
     background-color: whitesmoke;
-}
+} 

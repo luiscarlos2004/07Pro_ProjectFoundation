@@ -1,33 +1,34 @@
 <!-- se ejecuta en el dashbord para el admin ingresar la mascota -->
+<br><br>
 <div id="tablaUsuarios">
    <div class="text-center">
-      <h1>Ingresa una nueva mascota para que sea adoptada</h1>
-   </div>
+      <h1>Ingresa una mascota para que sea adoptada.</h1>
+   </div><br><br>
 
    <body class="text-center">
 
    <main class="form-signin w-100 d-flex justify-content-center">
-      <form style="width: 650px;" class=' p-5 shadow p-3 mb-5 bg-body rounded' #formularioAgregarMascota="ngForm" (ngSubmit)="agregarAnimal(formularioAgregarMascota)">
+      <form style="width: 600px; text-align: center;" class=' p-5 shadow p-3 mb-5 bg-body rounded' #formularioAgregarMascota="ngForm" (ngSubmit)="agregarAnimal(formularioAgregarMascota)">
                <img class="mb-4" src="https://tse1.mm.bing.net/th?id=OIP.XklayVAfQqM2N86Xfl07QwHaHa&pid=Api&P=0&w=160&h=160" alt="" width="80" height="67">
             <div class='form-floating mb-2 mt-4'>
-               <input class="" type="text" placeholder="nombre" name="nombre" [(ngModel)]="ServicioAdmin.animalesRegistra.nombre">
+               <input class="" type="text" placeholder="Nombre" name="nombre" [(ngModel)]="ServicioAdmin.animalesRegistra.nombre">
             </div>
             <div class="form-floating mb-2 mt-4">
-            <input class="" type="text" placeholder="edad" name="edad" [(ngModel)]="ServicioAdmin.animalesRegistra.edad">
+            <input class="" type="text" placeholder="Edad" name="edad" [(ngModel)]="ServicioAdmin.animalesRegistra.edad">
             </div>
             <div class="form-floating mb-2 mt-4">
-            <input class="" type="text" placeholder="raza" name="raza" [(ngModel)]="ServicioAdmin.animalesRegistra.raza">
+            <input class="" type="text" placeholder="Raza" name="raza" [(ngModel)]="ServicioAdmin.animalesRegistra.raza">
             </div> 
             <div class='form-floating mb-2 mt-4'> 
-            <input class='' type="text" placeholder="imagen" name="imagen" [(ngModel)]="ServicioAdmin.animalesRegistra.imagen">
+            <input class='' type="text" placeholder="Imagen" name="imagen" [(ngModel)]="ServicioAdmin.animalesRegistra.imagen">
          </div> 
          <div class="form-floating mb-2 mt-4">
-            <input type="text" placeholder="tamaÃ±o" name="tamano" [(ngModel)]="ServicioAdmin.animalesRegistra.tamano">
+            <input type="text" placeholder="Tamaño" name="tamano" [(ngModel)]="ServicioAdmin.animalesRegistra.tamano">
          </div>
          <div class="form-floating mb-2 mt-4" > 
             <select name="vacunas" [(ngModel)]="ServicioAdmin.animalesRegistra.vacunas">
                   <option value="">selecionar</option>
-                  <option value="si">Si</option>
+                  <option value="si">Sí</option>
                   <option value="no">No</option>
             </select>
          </div> 
