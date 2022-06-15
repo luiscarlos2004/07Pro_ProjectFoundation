@@ -7,36 +7,31 @@
         <br>
       </div>
     </div>
-    <div class="row col-md-4">
-      
-      <li class="pricing-text mb-5" *ngFor="let ani of servicio.animales">
-      <div class=" ftco">
+    <div class="row">
+      <div class="col-md-4 ftco" *ngFor="let ani of servicio.animales">
         <div class="block-7">
-          <div class="img"
-            style="background-image: url({{ani.imagen}});"
-            data-stellar-background-ratio="0.5"></div>
 
+          <div class="img" style="background-image: url('{{ani.imagen}}');" data-stellar-background-ratio="0.5"></div>
           <div class="text-center p-4">
-            <span class="excerpt d-block" name="nombre">{{ani.nombre}}</span>
+            <span class="excerpt d-block">{{ani.nombre}}</span>
             <br>
 
-          
-            
-              <li><span class="fa fa-check mr-2" name="edad"></span>{{ani.edad}}</li>
-              <li><span class="fa fa-check mr-2" name="raza"></span>{{ani.raza}}</li>
-              <li><span class="fa fa-check mr-2" name="tamano"></span>{{ani.tamano}}</li>
-              <li><span class="fa fa-check mr-2" name="vacunas"></span>Vacunas: {{ani.vacunas}}</li>
-              <!-- <li><span class="fa fa-check mr-2" name="raza"></span>Criollo</li>
-              <li><span class="fa fa-check mr-2" name="sexo"></span>Macho</li>
-              <li><span class="fa fa-check mr-2" name="cualidad"></span>Amoroso</li>
-              <li><span class="fa fa-check mr-2" name="vacunas"></span>vacunas: si</li> -->
+            <ul class="pricing-text mb-5">
+              <li><span class="fa fa-check mr-2"></span>{{ani.edad}}</li>
+              <li><span class="fa fa-check mr-2"></span>{{ani.tamano}}</li>
+              <li><span class="fa fa-check mr-2"></span>{{ani.raza}}</li>
+              <li><span class="fa fa-check mr-2"></span>{{ani.vacunas}}</li>
+            </ul>
+
             <a (click)="adoptame(ani._id)" class="btn btn-primary d-block px-2 py-3">Adoptame</a>
           </div>
         </div>
       </div>
-    </li>
     </div>
   </div>
-  <div>{{auth._id}}</div>
 </section>
+
 <app-footer></app-footer>
+
+
+<!-- *ngFor="let ani of servicio.animales" -->
