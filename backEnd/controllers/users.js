@@ -11,7 +11,8 @@ const postUsers = async(req,res)=>{
         await users.updateOne({_id:resp._id},{estado:true})
         res.send(resp);
     }else{
-        res.send(false);
+        throw new Error('Contraseña incorrecta')
+        // res.send(false);
     }
 }
 const consultarEstado = async(req,res)=>{
@@ -178,16 +179,27 @@ const buscarUsers = async(req,res)=>{
     }
 }
 const actualizarUser = async(req,res)=>{
+    let idu = req.params.idusers;
     let {_id,...info} = req.body;
-    // console.log(ids)
-    let datos = await registroUser.findById({_id:_id});
+    console.log(info)
+    // console.log(iduser)
+    let {iduser} = await users.findById({_id:idu})
+    // let {_id,...info} = req.body;
+    // // console.log(ids)
+    console.log(iduser)
+    // let id = _id;
+    let datos = await registroUser.updateOne({_id:iduser},info);
     console.log(datos)
-    res.send(true)
+    res.send(datos)
 }
 const mostrarinfouser = async(req,res)=>{
-    let id = req.params.ids
-    await registroUser.findById({_id:id})
-    res.send(true)
+    let idus = req.params.ids;
+    console.log(idus)
+    let {iduser} = await users.findById({_id:idus});
+    console.log(iduser)
+    let registros = await registroUser.findById({_id:iduser})
+    console.log(registros)
+    res.send(registros)
 }
 
 module.exports = {

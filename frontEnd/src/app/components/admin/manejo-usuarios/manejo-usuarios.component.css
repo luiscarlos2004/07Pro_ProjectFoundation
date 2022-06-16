@@ -1,6 +1,6 @@
 #tablaUsuarios{
     margin-left: 18%;
-    margin-top: -43%;
+    margin-top: -45%;
     margin-right: 3%;
 }
 #tablaUsuarios h1{
@@ -8,13 +8,13 @@
     font-size: 20px;
     font-weight: 200;
 }
-#tablaUsuarios table,
+/* #tablaUsuarios table,
 #tablaUsuarios table tr{
     border: 1px solid black;
 }
 #tablaUsuarios tr td{
     border-right: 1px solid gray;
-}
+} */
 .btneliminar,
 .btneditar{
     padding: 8px;

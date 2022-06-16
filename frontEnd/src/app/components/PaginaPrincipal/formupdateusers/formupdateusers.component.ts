@@ -17,7 +17,7 @@ export class FormupdateusersComponent implements OnInit {
   
   traerdatos(){
     this.servicio.traerdatos().subscribe({
-      next:(res)=>{this.servicio.infoactu = res},
+      next:(res)=>{this.servicio.usersRegis = res},
       error:(err)=>{console.log(err)}
     })
   }

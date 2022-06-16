@@ -8,6 +8,7 @@ import { Adop } from '../models/adoptame';
 import { Solicitudes } from '../models/solicitudesmodel';
 import { Buscar } from '../models/buscar';
 import { Archivos } from '../models/archivo';
+import { Experiencias_modelo } from '../models/experiencias';
 @Injectable({
   providedIn: 'root'
 })
@@ -44,7 +45,7 @@ export class ServiceService {
     password : ''
   }
   // userss:Users[]=[];
-  usersRegis:Register = {
+  usersRegis:any = {
     nombre:'',
     cedula:0,
     celular:0,
@@ -70,6 +71,13 @@ export class ServiceService {
     tamano:'',
     vacunas:'',
   }
+  datosInputExperiencias: Experiencias_modelo = {
+    nombre: '',
+    mascota: '',
+    foto: '',
+    comentario: '',
+  }
+experiencias:Experiencias_modelo[] = [];
   
   postUsers(datos:Users){
     let peticion = this.http.post(this.URL + '/api/users', datos)
@@ -163,12 +171,22 @@ export class ServiceService {
     return peticion
   }
   actualizarusers(datos:Register){
-    let peticion = this.http.put(this.URL + '/api/users/userspage/actualizar',datos);
+    console.log(datos._id)
+    let peticion = this.http.put(this.URL + '/api/users/userspage/actualizar/'+datos._id,datos);
     return peticion
   }
   traerdatos(){
     let id = this.auth._id
     let peticion = this.http.get<Register[]>(this.URL + '/api/users/userspage/traerinfoactu/'+id)
     return peticion
+  }
+  obtenerExperiencias(){
+    let peticion = this.http.get<Experiencias_modelo[]>(this.URL + '/api/users/experiencias/get_experiencia')
+    return peticion;
+  }
+  
+    createExperincias (datos: Experiencias_modelo){
+    let peticion = this.http.post(this.URL + '/api/users/experiencias/crear_experiencia', datos);
+    return peticion;
   }
 }

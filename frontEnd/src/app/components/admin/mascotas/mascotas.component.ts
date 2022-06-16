@@ -17,7 +17,6 @@ export class MascotasComponent implements OnInit {
   ngOnInit(): void {
     this.paginador(0)
   }
-
   paginador(numero:any){
     this.Servicio.buscarAnimal(numero).subscribe({
       next:(res)=>{this.Servicio.animales = res},

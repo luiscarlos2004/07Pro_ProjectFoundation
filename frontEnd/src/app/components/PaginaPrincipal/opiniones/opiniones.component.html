@@ -1,1 +1,100 @@
 <!-- pagina para subir comentario y imagen de una experiencia con la fundacion -->
+<body>
+        <section class="ftco-section bg-light">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-6 text-center mb-5">
+                  <h2 class="heading-section">Experiencia</h2>
+              </div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-md-12">
+                  <div class="wrapper">
+                      <div class="row no-gutters">
+                          <div class="col-md-7">
+                              <div class="contact-wrap w-100 p-md-5 p-4">
+                                  
+                                  <form  name="contactForm" class="contactForm" #formularioExperiencias="ngForm"
+                                  (ngSubmit)="agregarExperiencia(formularioExperiencias)">
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label class="label" for="name">Nombre</label>
+                                                  <input type="text" class="form-control" name="nombre" placeholder="Nombre" [(ngModel)]="servicio.datosInputExperiencias.nombre">
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6"> 
+                                              <div class="form-group">
+                                                  <label class="label" for="mascota">Nombre mascota</label>
+                                                  <input type="text" class="form-control" name="mascota" placeholder="Mascota" [(ngModel)]="servicio.datosInputExperiencias.mascota">
+                                              </div>
+                                          </div>
+                                          <div class="col-md-12">
+                                              <div class="form-group">
+                                                  <label class="label" for="foto">Imagen mascota</label>
+                                                  <input type="text" class="form-control" name="foto" placeholder="Imagen" [(ngModel)]="servicio.datosInputExperiencias.foto">
+                                              </div>
+                                          </div>
+                                          <div class="col-md-12">
+                                              <div class="form-group">
+                                                  <label class="label" for="#">Comentario</label>
+                                                  <textarea name="comentario" class="form-control" cols="30" rows="4" placeholder="Comentario" [(ngModel)]="servicio.datosInputExperiencias.comentario"></textarea>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-12">
+                                              <div class="form-group">
+                                                  <input type="submit" value="Send Message" class="btn btn-primary">
+                                                  <div class="submitting"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                          <div class="col-md-5 d-flex align-items-stretch">
+                              <div class="info-wrap w-100 p-5 img" style="background-image: url(../../../../assets/img/perrito2.jpg);">
+                    </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2>Latest news from our blog</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+    
+          <div class="col-md-4 d-flex" *ngFor="let datos of servicio.experiencias">
+            <div class="blog-entry align-self-stretch" >
+              <!-- <a href="blog-single.html" class="block-20 rounded"
+                style="background-image: url('{{datos.foto}}');">
+              </a> -->
+              <img src="{{datos.foto}}" class="block-20 rounded w-100">
+              <div class="text p-4">
+                <div class="meta mb-2">
+                  <div><a href="#" style="color: #42E6A4;">April 07, 2020</a></div>
+                  <br>
+                  <div><a href="#">MASCOTA:{{datos.mascota}}</a></div>
+                  <br>
+                  <div><a href="#">USUARIO: {{datos.nombre}}</a></div>
+                  <!-- <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div> -->
+                </div>
+                <h3 class="heading"><a href="#">{{datos.comentario}}</a></h3>
+              </div>
+            </div>
+          </div>
+          
+      
+        </div>
+      </div>
+    </section>
+  
+  </body>
