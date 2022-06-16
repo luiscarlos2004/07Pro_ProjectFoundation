@@ -65,7 +65,16 @@ export class MascotasComponent implements OnInit {
   editaranimal(datos:NgForm){
     console.log(datos)
     this.Servicio.editarMascota(datos.value).subscribe({
-      next:(res)=>{console.log(res)},
+      next:(res)=>{
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          titleText: 'Actualizado correctamente',
+          showConfirmButton: false,
+          width:450,
+          timer: 1500
+        }),datos.reset(),this.paginador(this.page)
+      },
       error:(err)=>{console.log(err)}
     })
   }

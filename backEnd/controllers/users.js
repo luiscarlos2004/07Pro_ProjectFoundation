@@ -78,7 +78,7 @@ const editaranimal = async(req,res)=>{
     const datos = req.body
     // console.log(datos)
     await animals.updateOne({_id:id},datos)
-    res.send('actualizado')
+    res.send(true)
 }
 const sacaranimalfront = async(req,res)=>{
     let result = await animals.find();
