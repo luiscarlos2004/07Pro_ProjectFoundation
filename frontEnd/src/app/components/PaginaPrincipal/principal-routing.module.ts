@@ -44,7 +44,7 @@ const rutas:Routes = [
       },
       {
         path:'dardonacion',
-        component:DaradopcionComponent
+        component:DonacionesFormComponent
       },
       {
         path:'donaciones',

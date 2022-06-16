@@ -1,5 +1,18 @@
-<p>seguimiento works!</p>
-<tr *ngFor="let so of servicio.procesoSoli">
-    <li>{{so.nombre}}</li>
-    <li>{{so.solicitudadopcion}}</li>
-</tr>
+    <div style="padding: 0px 40px 40px 40px;" *ngFor="let so of servicio.procesoSoli">
+        <div class="card mb-4 p-4" style="list-style: none;">
+            <div>
+                <ol class=" breadcrumb mb-4 w-100">
+                    <li style="padding:20px" >{{so.nombre}}</li>
+                </ol>
+                <li><img style="width:150px" src="{{so.imagen}}"></li>
+                <li style="width: 150px; color: white;" [ngStyle]="{'background-color':so.solicitudadopcion === 'ACEPTADA' ? 'green' : 'red' }">{{so.solicitudadopcion}}</li>
+            </div>  
+            <div>
+                <li>Edad: {{so.edad}}</li>
+                <li>Raza: {{so.raza}}</li>
+                <li>Tamaño: {{so.tamano}}</li>
+                <li>Vacunas: {{so.vacunas}}</li>
+                <li>Fecha: {{so.fecha}}</li>
+            </div>
+        </div>
+    </div>

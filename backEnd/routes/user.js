@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
 const { check } = require('express-validator');
-const {postUsers,consultarEstado,resgistrarUsuarios,cargarUsuarios,cargarUsuariosdos,ingresarAnimal,mostrarAnimales,eliminaranimal,editaranimal,sacaranimalfront,solicitudes,consultarsolicitudes,solicitudaceptada,buscaranimall,negarsolicitud,buscarsolicitudes,eliminarUsers,editarol,buscarUsers,actualizarUser,mostrarinfouser} = require('../controllers/users');
+const {postUsers,consultarEstado,resgistrarUsuarios,cargarUsuarios,cargarUsuariosdos,ingresarAnimal,mostrarAnimales,eliminaranimal,editaranimal,sacaranimalfront,solicitudes,consultarsolicitudes,solicitudaceptada,buscaranimall,negarsolicitud,buscarsolicitudes,eliminarUsers,editarol,buscarUsers,actualizarUser,mostrarinfouser,balance,daradopcion} = require('../controllers/users');
 // const {cargarArchivos} = require('../controllers/uploads');
 const datosExperincias = require('../models/experiencias');
 const {validarCampos} = require('../middlewares/validar-campos');
@@ -52,4 +52,6 @@ router.get("/experiencias/get_experiencia", async function (req, res) {
  
     console.log(datos_experiencia);
  })
+router.get('/balance/datos', balance);
+router.post('/dar/daradopcion', daradopcion)
 module.exports = router;

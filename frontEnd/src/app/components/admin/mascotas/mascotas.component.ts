@@ -25,12 +25,12 @@ export class MascotasComponent implements OnInit {
   }
   prevp(){
     if(this.page > 0){
-      this.page -= 5; 
+      this.page -= 2; 
     }
     this.paginador(this.page);
   }
   nextp(){
-    this.page += 5;
+    this.page += 2;
     this.paginador(this.page);
   }
   eliminarmascota(id:any){

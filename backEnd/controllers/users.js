@@ -11,8 +11,8 @@ const postUsers = async(req,res)=>{
         await users.updateOne({_id:resp._id},{estado:true})
         res.send(resp);
     }else{
-        throw new Error('Contraseña incorrecta')
-        // res.send(false);
+        // throw new Error('Contraseña incorrecta')
+        res.send(false);
     }
 }
 const consultarEstado = async(req,res)=>{
@@ -64,7 +64,7 @@ const ingresarAnimal = async(req,res)=>{
 const mostrarAnimales = async(req,res)=>{
     let numero = req.params.numero;
     const desde = numero;
-    const hasta = 5;
+    const hasta = 2;
     let info =  await animals.find().skip(Number(desde)).limit(Number(hasta));
     res.send(info)
 }
@@ -201,7 +201,22 @@ const mostrarinfouser = async(req,res)=>{
     console.log(registros)
     res.send(registros)
 }
-
+const balance = async(req,res)=>{
+    let usuarios = await users.countDocuments()
+    let animales = await animals.countDocuments()
+    let solicitudes = await solicitudesmo.find({solicitudadopcion:"PROCESO"}).countDocuments()
+    let obj = {
+        usuarios,
+        animales,
+        solicitudes
+    }
+    res.send(Array(obj))
+}
+const daradopcion = async(req,res)=>{
+    let animaldatos = req.body;
+    await new animals(animaldatos).save();
+    res.send(true)
+}
 module.exports = {
     postUsers,
     consultarEstado,
@@ -223,5 +238,7 @@ module.exports = {
     editarol,
     buscarUsers,
     actualizarUser,
-    mostrarinfouser
+    mostrarinfouser,
+    balance,
+    daradopcion
 }

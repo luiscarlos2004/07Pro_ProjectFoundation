@@ -4,7 +4,7 @@ import { ServiceService } from 'src/app/services/service.service';
 @Component({
   selector: 'app-solicitudes',
   templateUrl: './solicitudes.component.html',
-  styleUrls: ['./solicitudes.component.css']
+  styleUrls: ['../manejo-usuarios/manejo-usuarios.component.css','../../../../../fontAwesome/css/all.min.css']
 })
 export class SolicitudesComponent implements OnInit {
 

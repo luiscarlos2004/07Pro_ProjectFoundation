@@ -19,7 +19,7 @@ export class AdoptameComponent implements OnInit {
   pasarpersona(){}
   sacaranimales(){
     this.servicio.buscaraniamalesfront().subscribe({
-      next:(res)=>{this.servicio.animales = res,this.sacaranimales()},
+      next:(res)=>{this.servicio.animales = res},
       error:(err)=>{console.log(err)}
     })
   }

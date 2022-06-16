@@ -28,6 +28,19 @@ export class LoginComponent implements OnInit {
       next:(res)=>{
         console.log(res)
         // this.consultarEstados(res)
+        if(res == false){
+          Swal.fire({
+            icon: 'error',
+            title: 'Error al iniciar seción',
+            text: 'La contraseña o el correo no son validos',
+            width:500,
+            // showConfirmButton: false boton ok
+            confirmButtonColor: '#3085d5',
+            
+          })
+          datos.reset();
+        }else{
+
         
         Swal.fire({
           position: 'center',
@@ -51,6 +64,7 @@ export class LoginComponent implements OnInit {
           }
         }
         // this.router.navigate(['pagina/']);
+      }
       },
       error:(err)=>{
         console.log(err)

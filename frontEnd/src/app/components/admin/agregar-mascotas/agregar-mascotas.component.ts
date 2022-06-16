@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-agregar-mascotas',
   templateUrl: './agregar-mascotas.component.html',
-  styleUrls: ['./agregar-mascotas.component.css']
+  styleUrls: ['../manejo-usuarios/manejo-usuarios.component.css']
 })
 export class AgregarMascotasComponent implements OnInit {
   

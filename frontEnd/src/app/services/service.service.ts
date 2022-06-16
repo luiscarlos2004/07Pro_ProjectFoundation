@@ -9,6 +9,7 @@ import { Solicitudes } from '../models/solicitudesmodel';
 import { Buscar } from '../models/buscar';
 import { Archivos } from '../models/archivo';
 import { Experiencias_modelo } from '../models/experiencias';
+import { Balance } from '../models/balance';
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +31,12 @@ export class ServiceService {
   infoactu:Register[] = [];
   archiv:Archivos = {
     archivo:''
+  }
+  balan:Balance[]=[];
+  balance:Balance = {
+    usuarios:0,
+    animales:0,
+    solicitudes:0
   }
   buscar:Buscar = {
     busqueda:'',
@@ -187,6 +194,14 @@ experiencias:Experiencias_modelo[] = [];
   
     createExperincias (datos: Experiencias_modelo){
     let peticion = this.http.post(this.URL + '/api/users/experiencias/crear_experiencia', datos);
+    return peticion;
+  }
+  mostrarbalance(){
+    let peticion = this.http.get<Balance[]>(this.URL + '/api/users/balance/datos');
+    return peticion;
+  }
+  daradopcion(datos:RegistrarAnimal){
+    let peticion = this.http.post(this.URL + '/api/users/dar/daradopcion', datos)
     return peticion;
   }
 }

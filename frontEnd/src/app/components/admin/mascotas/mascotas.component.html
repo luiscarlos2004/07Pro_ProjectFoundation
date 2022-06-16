@@ -1,52 +1,17 @@
 <div id="tablaUsuarios">
-    <h1>Mascotas registradas</h1>
-    <form style="width: 30%;" class="d-flex mt-3 mb-3" #buscaran="ngForm" (ngSubmit)="buscaranimal(buscaran)">
-        <input placeholder="buscar..." class="form-control me-2" type="text" name="busqueda" [(ngModel)]="Servicio.buscar.busqueda">
-        <button class="btn btn-info text-white" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
-<!-- 
-    <table class="table table-dark table-striped">
-        <tr class="table-primary">
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Raza</th>
-            <th>Tamaño</th>
-            <th>vacunas</th>
-            <th>Imagen</th>
-            <th>Funcionalidades</th>
-        </tr>
-        <tr *ngFor="let i of Servicio.busca">
-            <li>{{i.nombre}}</li>
-        </tr>
-        <tr *ngFor="let i of Servicio.animales">
-            <td>{{i.nombre}}</td>
-            <td>{{i.edad}}</td>
-            <td>{{i.raza}}</td>
-            <td>{{i.tamano}}</td>
-            <td>{{i.vacunas}}</td>
-            <td><img style="width: 100px;" src="{{i.imagen}}" alt=""></td>
-            <button class="btneliminar" (click)="eliminarmascota(i._id)">Eliminar</button>
-            <button class="btneditar" (click)="mandarEditar(i)">Editar</button>
-        </tr>
-    </table>
-    <div class="paginador">
-        <p class="btnpaginador" (click)="prevp()"><</p>
-        <p class="btnpaginador" (click)="paginador(0)">1</p>
-        <p class="btnpaginador" (click)="paginador(5)">2</p>
-        <p class="btnpaginador" (click)="paginador(10)">3</p>
-        <p class="btnpaginador" (click)="paginador(15)">4</p>
-        <p class="btnpaginador">...</p>
-        <p class="btnpaginador" (click)="nextp()">></p>
-    </div> -->
-
-
-
+    <ol class="breadcrumb mb-4 w-100">
+      <li class="breadcrumb-item active p-3">Mascotas registradas</li>
+  </ol>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            DataTable Example
+            Tabla mascotas
         </div>
         <div class="card-body">
+            <form style="width: 30%;" class="d-flex mt-3 mb-3" #buscaran="ngForm" (ngSubmit)="buscaranimal(buscaran)">
+                <input placeholder="buscar..." type="text" name="busqueda" [(ngModel)]="Servicio.buscar.busqueda">
+                <button class="btn btn-info text-white" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
             <table class="table table-bordered table-light">
                 <thead>
                     <tr class="bg-secondary">
@@ -76,6 +41,15 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="paginador">
+                <p class="btnpaginador" (click)="prevp()"><</p>
+                <p class="btnpaginador" (click)="paginador(0)">1</p>
+                <p class="btnpaginador" (click)="paginador(2)">2</p>
+                <p class="btnpaginador" (click)="paginador(4)">3</p>
+                <p class="btnpaginador" (click)="paginador(6)">4</p>
+                <p class="btnpaginador">...</p>
+                <p class="btnpaginador" (click)="nextp()">></p>
+            </div>
         </div>
     </div>
 </div>
@@ -92,16 +66,17 @@
       
     </div>
     <div class="form-row">
-        <div class="col-md-6 mb-1">
-            <label for="validationDefault02">Nombre</label>
-            <input  class="form-control" type="text" placeholder="nombre" name="nombre"
-                    [(ngModel)]="Servicio.animalesRegistra.nombre">
-        </div>
+        
       <div class="col-md-3 mb-1">
         <label for="validationDefault03">Edad</label>
         <input class="form-control" type="text" placeholder="edad" name="edad" [(ngModel)]="Servicio.animalesRegistra.edad" value="hola">
     </div>
-      <div class="col-md-6 mb-1">
+    <div class="col-md-3 mb-1">
+        <label for="validationDefault02">Nombre</label>
+        <input  class="form-control" type="text" placeholder="nombre" name="nombre"
+                [(ngModel)]="Servicio.animalesRegistra.nombre">
+    </div>
+      <div class="col-md-3 mb-1">
         <label for="validationDefault04">Raza</label>
         <input class="form-control" type="text" placeholder="raza" name="raza" [(ngModel)]="Servicio.animalesRegistra.raza">
       </div>
@@ -112,7 +87,7 @@
       </div>
     </div>
     <div class="form-row">
-        <div class="col-md-6 mb-1">
+        <div class="col-md-3 mb-1">
           <label for="validationDefault03">Tamaño</label>
           <input class="form-control" type="text" placeholder="tamaÃ±o" name="tamano" [(ngModel)]="Servicio.animalesRegistra.tamano">
       </div>
@@ -120,9 +95,9 @@
           <label for="validationDefault04">Raza</label>
           <input class="form-control" type="text" placeholder="raza" name="raza" [(ngModel)]="Servicio.animalesRegistra.raza">
         </div>
-        <div class="form-floating mb-1 mt-1">
+        <div class="col-md-3 mb-1 mt-1">
             <label for="validationDefault04">Vacunas</label>
-            <select name="vacunas" [(ngModel)]="Servicio.animalesRegistra.vacunas">
+            <select name="vacunas" class="custom-select" [(ngModel)]="Servicio.animalesRegistra.vacunas">
                 <option value="">selecionar</option>
                 <option value="si">Si</option>
                 <option value="no">No</option>
@@ -130,6 +105,6 @@
         </div>
       </div>
     
-    <button class="btn btn-primary" type="submit">Submit form</button>
-  </form>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <button class="btn btn-primary" type="submit">Enviar</button>
+    
+</form>

@@ -37,37 +37,38 @@
     </div>
 </div> -->
 
-<div class="container-fluid px-4">
-    
-<div class="row" style="width: 70%; float: right; margin-top: -35%; margin-right: 10%;">
+
+<div class="container-fluid px-4" >
+<div class="row" style="width: 70%; float: right; margin-top: -45%; margin-right: 10%;"  *ngFor="let nu of servicio.balan">
     <ol class="breadcrumb mb-4 w-100">
-        <li class="breadcrumb-item active p-3">Dashboard</li>
+        <li class="breadcrumb-item active p-3">Balance</li>
     </ol>
     <div class="col-xl-3 col-md-6">
         
         <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Primary Card</div>
+            <div class="card-body">Usuarios registrados</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">View Details</a>
+                <a class="small text-white stretched-link" href="/admin/balance"></a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <p style="font-size: 25px; border-radius: 50px; background-color: gray;padding: 20px;">{{nu.usuarios}}</p>
             </div>
         </div>
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card bg-warning text-white mb-4">
-            <div class="card-body">Warning Card</div>
+            <div class="card-body">Mascotas registradas</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">View Details</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <p style="font-size: 25px; border-radius: 50px; background-color: gray;padding: 20px;">{{nu.animales}}</p>
             </div>
         </div>
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card bg-success text-white mb-4">
-            <div class="card-body">Success Card</div>
+            <div class="card-body">Solicitudes en proceso</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">View Details</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                <p style="font-size: 25px; border-radius: 50px; background-color: gray;padding: 20px;">{{nu.solicitudes}}</p>
             </div>
         </div>
     </div>
@@ -75,7 +76,6 @@
         <div class="card bg-danger text-white mb-4">
             <div class="card-body">Danger Card</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">View Details</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>

@@ -1,8 +1,93 @@
 <!-- dashbord para revisar pedir adopcion de una mascota -->
-<tr *ngFor="let soli of servicioanimales.solici">
+<!-- <tr >
     <li>{{soli.nombre}}</li>
     <button (click)="aceptarsolicitud(soli._id)">Aceptar</button>
     <button (click)="denegarsolici(soli._id)">Denegar</button>
-</tr>
+</tr> -->
 
 
+<!-- <div class="card-group" *ngFor="let soli of servicioanimales.solici">
+    <div class="card">
+        <img class="card-img-top" src="" alt="Card image cap">
+        <div class="card-body">
+            <table>
+                <tr>
+                    <th>Nombre persona</th>
+                    <th>Cedula</th>
+                    <th>Celular</th>
+                    <th>Direccion</th>
+                    <th>Ocupacion</th>
+                    <th>Sexo</th>
+                    <th>Nombre mascota</th>
+                    <th>Edad</th>
+                    <th>Raza</th>
+                    <th>Tamaño</th>
+                    <th>Vacunas</th>
+                    <th>Fecha</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>{{soli.nombre}}</td>
+                </tr>
+            </table>
+
+        </div>
+        
+    </div>
+    
+</div> -->
+
+<div id="tablaUsuarios">
+<div class="card mb-4" style="width: 100%;">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Tabla mascotas
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-light" >
+            <thead>
+                <tr class="bg-secondary">
+                    <th>Nombre persona</th>
+                    <th>Cedula</th>
+                    <th>Celular</th>
+                    <th>Direccion</th>
+                    <th>Ocupacion</th>
+                    <th>Sexo</th>
+                    <th>Nombre mascota</th>
+                    <th>Edad Mascota</th>
+                    <th>Raza</th>
+                    <th>Tamaño</th>
+                    <th>Vacunas</th>
+                    <th>Fecha</th>
+                    <th>Imagen</th>
+                    <th style="width:60px">Funcionalidades</th>
+                </tr>
+            </thead>
+            <tbody class="table bg-dark table-dark">
+                
+                <tr  *ngFor="let soli of servicioanimales.solici">
+                    <td>{{soli.nombrep}}</td>
+                    <td>{{soli.cedula}}</td>
+                    <td>{{soli.celular}}</td>
+                    <td>{{soli.direccion}}</td>
+                    <td>{{soli.ocupacion}}</td>
+                    <td>{{soli.sexo}}</td>
+                    <td>{{soli.nombre}}</td>
+                    <td>{{soli.edad}}</td>
+                    <td>{{soli.raza}}</td>
+                    <td>{{soli.tamano}}</td>
+                    <td>{{soli.vacunas}}</td>
+                    <td>{{soli.fecha}}</td>
+
+                    <td><img style="width: 100px;" src="{{soli.imagen}}" alt=""></td>
+                    <td>
+                        <a  style="font-size:30px" class="text-success" (click)="aceptarsolicitud(soli._id)"><i class="fa-solid fa-circle-check"></i></a>
+                        <a style="font-size:30px" class="text-danger" (click)="denegarsolici(soli._id)"><i class="fa-solid fa-circle-xmark"></i></a>
+                    </td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
