@@ -1,4 +1,4 @@
-<h1>mascotas</h1>
+<h1>Mascotas</h1>
 
 
 <main class="form-signin w-100 d-flex justify-content-center">
@@ -60,10 +60,10 @@
     <table class="table table-dark table-striped">
         <tr class="table-primary">
             <th>Nombre</th>
-            <th>cosa</th>
             <th>Edad</th>
-            <th>Tamaño</th>
             <th>Raza</th>
+            <th>Tamaño</th>
+            <th>Imagen</th>
             <th>vacunas</th>
             <th>Funcionalidades</th>
         </tr>
@@ -72,11 +72,11 @@
         </tr>
         <tr *ngFor="let i of Servicio.animales">
             <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
-            <td>{{i.nombre}}</td>
+            <td>{{i.edad}}</td>
+            <td>{{i.raza}}</td>
+            <td>{{i.tamano}}</td>
+            <td>{{i.imagen}}</td>
+            <td>{{i.vacunas}}</td>
             <button class="btneliminar" (click)="eliminarmascota(i._id)">Eliminar</button>
             <button class="btneditar" (click)="mandarEditar(i)">Editar</button>
         </tr>
