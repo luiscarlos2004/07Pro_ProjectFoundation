@@ -9795,3 +9795,29 @@
       stroke-dasharray: 89, 200;
       stroke-dashoffset: -136px; } }
   
+
+      .title-seguimiento{ 
+        text-align: center;
+        color: #00bd55;
+      }
+
+     p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size:larger;
+        text-align: justify;
+    }
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+    h2 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bolder;
+    }
+
+
+    .fondo-seguimiento{
+  
+    }
+     

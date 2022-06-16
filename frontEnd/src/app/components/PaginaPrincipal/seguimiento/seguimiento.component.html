@@ -1,5 +1,47 @@
-<p>seguimiento works!</p>
-<tr *ngFor="let so of servicio.procesoSoli">
-    <li>{{so.nombre}}</li>
-    <li>{{so.solicitudadopcion}}</li>
-</tr>
+<body class="fondo-seguimiento">
+    
+
+<br>
+<br>
+
+<h1 class="title-seguimiento">Seguimiento Procesos </h1>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let so of servicio.procesoSoli">
+        <th scope="row">1</th>
+        <td>asdas</td>
+        <td>{{so.nombre}}</td>
+        <td>{{so.solicitudadopcion}}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</body>
